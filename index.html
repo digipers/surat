@@ -3044,7 +3044,7 @@ sttm_a: data => `
       <h3 class="u">SURAT KETERANGAN TIDAK MAMPU</h3>
       <p class="nomor-surat" style="font-size: 12pt; text-align: center; margin-top: 0; line-height: 1;">Nomor: ${data.nomorSurat || '...........................'}</p>
     </div>
-    <p class="indent justify" style="margin-bottom: 10px;">Yang Bertanda tangan di bawah ini, Kepala Desa ${data.desa || 'Teluk Dalem'} Kecamatan ${data.kecamatan || 'Mataram Baru'} Kabupaten ${data.kota || 'Lampung Timur'} menerangkan dengan sesungguhnya :</p>
+    <p class="indent justify" style="margin-bottom: 10px;">Yang Bertanda tangan di bawah ini, Kepala Desa ${data.desa || '........'} Kecamatan ${data.kecamatan || '..........'} Kabupaten ${data.kota || '..........'} menerangkan dengan sesungguhnya :</p>
     
    <table class="info" style="margin-bottom: 5px; font-size: 11pt;">
   <tr><td>Nomor KK</td><td>:</td><td>${data.nomor_kk || '...........................'}</td></tr>
@@ -5013,3 +5013,4 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
