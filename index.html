@@ -573,30 +573,31 @@
       <div class="panel-header">
    <div style="flex: 1;">
     <select id="jenisSurat" onchange="handleJenisSuratChange()" style="width: 360px; padding: 10px;">
-      <option value="sttm">1. Surat Keterangan Tidak Mampu(401)</option>
+      <option value="sttm">1. SKTM Bansos(401)</option>
 	  <option value="sttm_a">2. SKTM Untuk Anak Sekolah(420)</option>
-        <option value="sku">3. Surat Keterangan Usaha (SKU)(479)</option>
-        <option value="domisili">4. Surat Domisili Penduduk (479)</option>
-        <option value="dom_asset">5. Surat Domisili Asset (479)</option>
-        <option value="kematian">6. Surat Keterangan Kematian (479)</option>
-        <option value="ahli_waris">7. Surat Keterangan Ahli Waris</option>
-        <option value="kelahiran">8. Surat Keterangan Kelahiran (479)</option>
-        <option value="tanah">9. Surat Keterangan Tanah/Bangunan (343)</option>
-        <option value="skck">10. Surat Pengantar Pembuatan SKCK (331)</option>
-        <option value="beda_identitas">11. Surat Keterangan Beda Identitas (500)</option>
-        <option value="ubah_data">12. Surat Perubahan Data (500)</option>
-        <option value="janda_duda">13. Surat Keterangan Janda/Duda (500)</option>
-        <option value="pengantar_umum">14. Surat Pengantar Umum</option>
-        <option value="belum_menikah">15. Surat Keterangan Belum Menikah (560)</option>
-        <option value="pengangkatan_anak">16. Surat Keterangan Pengangkatan Anak</option>
-        <option value="hubungan_keluarga">17. Surat Keterangan Hubungan Keluarga</option>
-        <option value="perwalian_anak">18. Surat Keterangan Perwalian Anak</option>
-        <option value="penghasilan">19. Surat Keterangan Penghasilan</option>
-        <option value="penerima_bantuan">20. Surat Keterangan Penerima Bantuan</option>
-        <option value="keterangan_pekerjaan">21. Surat Keterangan Pekerjaan (474)</option>
-        <option value="pindah_agama">22. Surat Keterangan Pindah Agama</option>
-        <option value="pindah_masuk_keluar">23. Surat Keterangan Pindah Masuk/Keluar (474)</option>
-		<option value="hibah">24. Surat Keterangan Hibah</option>
+	   <option value="sttm_u">3. SKTM Umum(401)</option>
+        <option value="sku">4. Surat Keterangan Usaha (SKU)(479)</option>
+        <option value="domisili">5. Surat Domisili Penduduk (479)</option>
+        <option value="dom_asset">6. Surat Domisili Asset (479)</option>
+        <option value="kematian">7. Surat Keterangan Kematian (479)</option>
+        <option value="ahli_waris">8. Surat Keterangan Ahli Waris</option>
+        <option value="kelahiran">9. Surat Keterangan Kelahiran (479)</option>
+        <option value="tanah">10. Surat Keterangan Tanah/Bangunan (343)</option>
+        <option value="skck">11. Surat Pengantar Pembuatan SKCK (331)</option>
+        <option value="beda_identitas">12. Surat Keterangan Beda Identitas (500)</option>
+        <option value="ubah_data">13. Surat Perubahan Data (500)</option>
+        <option value="janda_duda">14. Surat Keterangan Janda/Duda (500)</option>
+        <option value="pengantar_umum">15. Surat Pengantar Umum</option>
+        <option value="belum_menikah">16. Surat Keterangan Belum Menikah (560)</option>
+        <option value="pengangkatan_anak">17. Surat Keterangan Pengangkatan Anak</option>
+        <option value="hubungan_keluarga">18. Surat Keterangan Hubungan Keluarga</option>
+        <option value="perwalian_anak">19. Surat Keterangan Perwalian Anak</option>
+        <option value="penghasilan">20. Surat Keterangan Penghasilan</option>
+        <option value="penerima_bantuan">21. Surat Keterangan Penerima Bantuan</option>
+        <option value="keterangan_pekerjaan">22. Surat Keterangan Pekerjaan (474)</option>
+        <option value="pindah_agama">23. Surat Keterangan Pindah Agama</option>
+        <option value="pindah_masuk_keluar">24. Surat Keterangan Pindah Masuk/Keluar (474)</option>
+		<option value="hibah">25. Surat Keterangan Hibah</option>
     </select>
   </div>
 
@@ -872,6 +873,70 @@ const formTemplates = {
       </div>
     </fieldset>
 `,
+ sttm_u: `
+    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Identitas Pemohon</legend>
+      <div class="row" style="display:flex; gap:16px;">
+        <div class="col" style="flex:1;">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap *</label>
+            <input id="nama" type="text" oninput="debounceUpdate()" required>
+            <span class="error-message">Nama harus diisi.</span>
+          </div>
+        </div>
+        <div class="col" style="flex:1;">
+          <div class="form-group">
+            <label for="nik">NIK *</label>
+            <input id="nik" type="text" oninput="debounceUpdate()" required>
+            <span class="error-message">NIK harus diisi.</span>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="display:flex; gap:16px;">
+        <div class="col" style="flex:1;">
+          <div class="form-group">
+            <label for="ttl">Tempat / Tanggal Lahir *</label>
+            <input id="ttl" type="text" oninput="debounceUpdate()" required>
+            <span class="error-message">Tempat/Tanggal lahir harus diisi.</span>
+          </div>
+        </div>
+        <div class="col" style="flex:1;">
+          <div class="form-group">
+            <label for="pekerjaan">Pekerjaan *</label>
+            <input id="pekerjaan" type="text" oninput="debounceUpdate()" required>
+            <span class="error-message">Pekerjaan harus diisi.</span>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Alamat</legend>
+      
+      <div class="row" style="display:flex; gap:16px;">
+        <div class="col" style="flex:1;">
+          <div class="form-group"><label for="rt">RT *</label><input id="rt" type="text" oninput="debounceUpdate()" required><span class="error-message">RT harus diisi.</span></div>
+        </div>
+        <div class="col" style="flex:1;">
+          <div class="form-group"><label for="rw">RW *</label><input id="rw" type="text" oninput="debounceUpdate()" required><span class="error-message">RW harus diisi.</span></div>
+        </div>
+        <div class="col" style="flex:1;">
+        <div class="form-group"><label for="dusun">Dusun *</label><input id="dusun" type="text" oninput="debounceUpdate()" required><span class="error-message">Dusun harus diisi.</span></div>
+        </div>
+       
+      </div>
+  
+<fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+  <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Keperluan</legend>
+  <div class="form-group">
+    <label for="keperluan">Keperluan Pembuatan Surat *</label>
+    <textarea id="keperluan" rows="2" placeholder="Tuliskan keperluan pembuatan surat di sini..." oninput="debounceUpdate()" required></textarea>
+    <span class="error-message">Keperluan harus diisi.</span>
+  </div>
+  <div class="form-group">
+    <label for="ket_tambahan">Penghasilan perbulan (tulis angka dan huruf)</label>
+    <textarea id="ket_tambahan" rows="2" oninput="debounceUpdate()"></textarea>
+  </div>
+  `,
  sku: `
   <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
     <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Identitas Pemilik Usaha</legend>
@@ -3044,7 +3109,7 @@ sttm_a: data => `
       <h3 class="u">SURAT KETERANGAN TIDAK MAMPU</h3>
       <p class="nomor-surat" style="font-size: 12pt; text-align: center; margin-top: 0; line-height: 1;">Nomor: ${data.nomorSurat || '...........................'}</p>
     </div>
-    <p class="indent justify" style="margin-bottom: 10px;">Yang Bertanda tangan di bawah ini, Kepala Desa ${data.desa || '........'} Kecamatan ${data.kecamatan || '..........'} Kabupaten ${data.kota || '..........'} menerangkan dengan sesungguhnya :</p>
+    <p class="indent justify" style="margin-bottom: 10px;">Yang Bertanda tangan di bawah ini, Kepala Desa ${data.desa || 'Teluk Dalem'} Kecamatan ${data.kecamatan || 'Mataram Baru'} Kabupaten ${data.kota || 'Lampung Timur'} menerangkan dengan sesungguhnya :</p>
     
    <table class="info" style="margin-bottom: 5px; font-size: 11pt;">
   <tr><td>Nomor KK</td><td>:</td><td>${data.nomor_kk || '...........................'}</td></tr>
@@ -3094,8 +3159,59 @@ sttm_a: data => `
     </div>
 </div>
     </div>
+	 `,
+  sttm_u: data => `
+    <div class="letterhead">
+      <div class="logo-placeholder">
+        ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
+      </div>
+      <div class="letterhead-text">
+        <p style="font-size: 12pt; margin: 0;">PEMERINTAH KABUPATEN ${data.kota.toUpperCase() || 'KABUPATEN'}</p>
+        <p style="font-size: 13pt; margin: 0;">KECAMATAN ${data.kecamatan.toUpperCase() || 'KECAMATAN'}</p>
+        <p style="font-size: 14pt; margin: 0;">DESA ${data.desa.toUpperCase() || 'DESA'}</p>
+        <p style="font-size: 8pt; margin-top: 5px;">Jl. Raya Lintas Timur N0. 03 Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
+        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}</p>
+      </div>
+    </div>
+    <div class="center" style="margin-bottom: 20px;">
+      <h3 class="u">SURAT KETERANGAN TIDAK MAMPU</h3>
+      <p class="nomor-surat" style="font-size: 12pt; text-align: center; margin-top: 0; line-height: 1;">Nomor: ${data.nomorSurat || '...........................'}</p>
+    </div>
+ <p class="indent justify">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
+        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa :</p>
+    <table class="info">
+      <tr><td>Nama</td><td>:</td><td>${data.nama || '...........................'}</td></tr>
+            <tr><td>NIK</td><td>:</td><td>${data.nik || '...........................'}</td></tr>
+      <tr><td>Tempat/Tgl Lahir</td><td>:</td><td>${data.ttl || '...........................'}</td></tr>
+      <tr><td>Pekerjaan</td><td>:</td><td>${data.pekerjaan || '...........................'}</td></tr>
+      <tr><td>Alamat</td><td>:</td><td>Dusun ${data.dusun || '...'}&nbsp;&nbsp;&nbsp;RT ${data.rt || '...'} &nbsp;&nbsp;&nbsp;RW ${data.rw || '...'}&nbsp;&nbsp;&nbsp; Desa ${data.desa || '...'} &nbsp;&nbsp; Kecamatan ${data.kecamatan || '..'}&nbsp;&nbsp;Kabupaten ${data.kota || '..'}</td></tr></td></tr>
 
-
+    </table>
+    <div class="post-table-spacing"></div>
+    <p class="indent justify">
+  Berdasarkan Surat Keterangan Ketua RT ${data.rt || '...'}, serta data yang ada di desa, warga tersebut benar-benar penduduk Desa ${data.desa || '...................'} termasuk keluarga yang tidak mampu secara ekonomi. 
+  Surat keterangan ini dibuat untuk keperluan ${data.keperluan || 'keperluan'}
+  ${data.ket_tambahan ? `, sebagai informasi tambahan warga tersebut berpenghasilan per bulan sebesar : ${data.ket_tambahan}.` : '.'}
+</p>
+    <div class="pre-closing-spacing"></div>
+    <p class="indent justify">Demikian Surat Keterangan Tidak Mampu ini dibuat agar dapat dipergunakan sebagaimana mestinya.</p>
+    
+   <div class="ttd-container">
+    <div class="ttd-box">
+      <div style="height: 0px;"></div>
+      <p>${data.desa ||'.............'}, ${data.tanggal || '..................'}</p>
+      ${data.penandatangan === 'sekretaris_desa' ? `
+        <p style="text-align: center; margin-top: 10px;">An. Kepala Desa ${data.desa || 'Nama Desa'}</p>
+        <p style="font-weight: bold; text-align: center;">Sekertaris Desa</p>
+        <div style="height: 35px;"></div>
+        <p class="u"><strong>${data.nama_sekretaris.toUpperCase() || 'NAMA SEKRETARIS DESA'}</strong></p>
+      ` : `
+        <p style="font-weight: bold;">Kepala Desa ${data.desa || 'Nama Desa'}</p>
+        <div style="height: 35px;"></div>
+        <p class="u"><strong>${data.nama_kepala.toUpperCase() || 'Nama Kepala Desa'}</strong></p>
+      `}
+    </div>
+  </div>
 `,
   sku: data => `
   <div class="letterhead">
@@ -4452,7 +4568,18 @@ case 'sttm_a':
   data.nama_camat_ttd = document.getElementById('nama_camat_ttd')?.value || '';
   data.nip_camat_ttd = document.getElementById('nip_camat_ttd')?.value || '';
   break;
-  
+    case 'sttm_u':
+      data.nama = document.getElementById('nama')?.value || '';
+      data.nik = document.getElementById('nik')?.value || '';
+      data.ttl = document.getElementById('ttl')?.value || '';
+      data.pekerjaan = document.getElementById('pekerjaan')?.value || '';
+      data.rt = document.getElementById('rt')?.value || '';
+      data.rw = document.getElementById('rw')?.value || '';
+      data.dusun = document.getElementById('dusun')?.value || ''; // DITAMBAHKAN
+      data.keperluan = document.getElementById('keperluan')?.value || '';
+      data.ket_tambahan = document.getElementById('ket_tambahan')?.value || '';
+     
+      break;
     case 'sku':
   data.nama = document.getElementById('nama')?.value || '';
   data.ttl = document.getElementById('ttl')?.value || '';
@@ -5013,4 +5140,3 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
-
