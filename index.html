@@ -2728,160 +2728,70 @@ const formTemplates = {
       <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Kepala Keluarga</legend>
       <div class="row" style="display:flex; gap:16px;">
         <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="nomor_kk">Nomor KK *</label>
-            <input id="nomor_kk" type="text" oninput="debounceUpdate()" required>
-            <span class="error-message">Nomor KK harus diisi.</span>
-          </div>
+          <div class="form-group"><label for="nomor_kk">Nomor KK *</label><input id="nomor_kk" type="text" oninput="debounceUpdate()" required><span class="error-message">Nomor KK harus diisi.</span></div>
         </div>
         <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="nama_kepala_keluarga">Nama Kepala Keluarga *</label>
-            <input id="nama_kepala_keluarga" type="text" oninput="debounceUpdate()" required>
-            <span class="error-message">Nama Kepala Keluarga harus diisi.</span>
-          </div>
+          <div class="form-group"><label for="nama_kepala_keluarga">Nama Kepala Keluarga *</label><input id="nama_kepala_keluarga" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div>
         </div>
       </div>
     </fieldset>
+
     <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
       <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Kepindahan</legend>
       <div class="form-group">
         <label for="alamat_tujuan_pindah">Alamat Lengkap Tujuan Pindah *</label>
         <textarea id="alamat_tujuan_pindah" rows="2" oninput="debounceUpdate()" required></textarea>
-        <span class="error-message">Alamat tujuan harus diisi.</span>
       </div>
       <div class="row" style="display:flex; gap:16px;">
         <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="alasan_pindah">Alasan Kepindahan *</label>
-            <select id="alasan_pindah" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih Alasan --</option>
-              <option value="Pekerjaan">Pekerjaan</option>
-              <option value="Pendidikan">Pendidikan</option>
-              <option value="Keamanan">Keamanan</option>
-              <option value="Kesehatan">Kesehatan</option>
-              <option value="Perumahan">Perumahan</option>
-              <option value="Keluarga">Keluarga</option>
-              <option value="Lainnya">Lainnya</option>
-            </select>
-            <span class="error-message">Alasan pindah harus diisi.</span>
-          </div>
+          <div class="form-group"><label for="alasan_pindah">Alasan Kepindahan *</label><select id="alasan_pindah" oninput="debounceUpdate()" required><option value="">-- Pilih Alasan --</option><option value="Pekerjaan">Pekerjaan</option><option value="Pendidikan">Pendidikan</option><option value="Kesehatan">Kesehatan</option><option value="Perumahan">Perumahan</option><option value="Keluarga">Keluarga</option><option value="Lainnya">Lainnya</option></select></div>
         </div>
         <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="klasifikasi_pindah">Klasifikasi Pindah *</label>
-            <select id="klasifikasi_pindah" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih Klasifikasi --</option>
-              <option value="Dalam Satu Desa">Dalam Satu Desa</option>
-              <option value="Antar Desa">Antar Desa</option>
-              <option value="Antar Kecamatan">Antar Kecamatan</option>
-              <option value="Antar Kabupaten">Antar Kabupaten</option>
-              <option value="Antar Propinsi">Antar Propinsi</option>
-            </select>
-            <span class="error-message">Klasifikasi pindah harus diisi.</span>
-          </div>
+          <div class="form-group"><label for="klasifikasi_pindah">Klasifikasi Pindah *</label><select id="klasifikasi_pindah" oninput="debounceUpdate()" required><option value="">-- Pilih Klasifikasi --</option><option value="Dalam Satu Desa">Dalam Satu Desa</option><option value="Antar Desa">Antar Desa</option><option value="Antar Kecamatan">Antar Kecamatan</option><option value="Antar Kabupaten">Antar Kabupaten</option><option value="Antar Propinsi">Antar Propinsi</option></select></div>
         </div>
       </div>
       <div class="row" style="display:flex; gap:16px;">
         <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="jenis_kepindahan">Jenis Kepindahan *</label>
-            <select id="jenis_kepindahan" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih Jenis --</option>
-              <option value="Kepala Keluarga">Kepala Keluarga</option>
-              <option value="Kepala Keluarga dan Seluruh Anggota Keluarga">Kepala Keluarga dan Seluruh Anggota Keluarga</option>
-              <option value="Kepala Keluarga dan Sebagian Anggota Keluarga">Kepala Keluarga dan Sebagian Anggota Keluarga</option>
-            </select>
-            <span class="error-message">Jenis kepindahan harus diisi.</span>
-          </div>
+          <div class="form-group"><label for="jenis_kepindahan">Jenis Kepindahan *</label><select id="jenis_kepindahan" oninput="debounceUpdate()" required><option value="">-- Pilih Jenis --</option><option value="Kepala Keluarga">Kepala Keluarga</option><option value="Kepala Keluarga dan Seluruh Anggota Keluarga">Kepala Keluarga dan Seluruh Anggota Keluarga</option><option value="Kepala Keluarga dan Sebagian Anggota Keluarga">Kepala Keluarga dan Sebagian Anggota Keluarga</option></select></div>
         </div>
         <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="tanggal_pindah">Tanggal Pindah *</label>
-            <input id="tanggal_pindah" type="text" placeholder="Contoh: 25 Oktober 2023" oninput="debounceUpdate()" required>
-            <span class="error-message">Tanggal pindah harus diisi.</span>
-          </div>
+          <div class="form-group"><label for="tanggal_pindah">Tanggal Pindah *</label><input id="tanggal_pindah" type="text" placeholder="Contoh: 25 Oktober 2023" oninput="debounceUpdate()" required></div>
         </div>
       </div>
     </fieldset>
+
+    <!-- TAMBAHAN BARU: Keluarga Yang Pindah -->
+    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Keluarga Yang Pindah</legend>
+      <div id="keluarga_pindah_container">
+        <!-- Baris pertama default -->
+        <div class="row keluarga_pindah_row" style="display:flex; gap:10px; margin-bottom:10px; align-items: flex-start;">
+            <div class="col" style="flex:0.5"><div class="form-group"><label>NIK</label><input type="text" class="nik-anggota" oninput="debounceUpdate()"></div></div>
+            <div class="col" style="flex:1"><div class="form-group"><label>Nama</label><input type="text" class="nama-anggota" oninput="debounceUpdate()"></div></div>
+            <div class="col" style="flex:0.8"><div class="form-group"><label>Tgl Lahir</label><input type="text" class="ttl-anggota" placeholder="09-11-1940" oninput="debounceUpdate()"></div></div>
+            <div class="col" style="flex:0.6"><div class="form-group"><label>SHD</label><input type="text" class="shd-anggota" placeholder="Kepala Keluarga" oninput="debounceUpdate()"></div></div>
+            <div class="col" style="flex:0.2; padding-top:24px;"><button type="button" class="btn btn-danger" onclick="hapusKeluargaPindah(this)" title="Hapus Baris"><i class="fas fa-times"></i></button></div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline" onclick="tambahKeluargaPindah()" style="width:100%; margin-top:10px; font-size:12px;">
+        <i class="fas fa-plus"></i> Tambah Anggota Keluarga
+      </button>
+    </fieldset>
+    <!-- END TAMBAHAN -->
+
     <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
       <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Status KK</legend>
       <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="status_kk_tidak_pindah">Status No KK bagi yang tidak pindah *</label>
-            <select id="status_kk_tidak_pindah" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih Status --</option>
-              <option value="Numpang KK">Numpang KK</option>
-              <option value="Membuat KK baru">Membuat KK baru</option>
-              <option value="Tidak Anggota KK yg tinggal">Tidak Anggota KK yg tinggal</option>
-              <option value="Nomor KK tetap">Nomor KK tetap</option>
-            </select>
-            <span class="error-message">Status KK harus diisi.</span>
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="status_kk_pindah">Status No KK bagi yang pindah *</label>
-            <select id="status_kk_pindah" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih Status --</option>
-              <option value="Numpang KK">Numpang KK</option>
-              <option value="Membuat KK baru">Membuat KK baru</option>
-              <option value="Tidak Anggota KK yg tinggal">Tidak Anggota KK yg tinggal</option>
-              <option value="Nomor KK tetap">Nomor KK tetap</option>
-            </select>
-            <span class="error-message">Status KK harus diisi.</span>
-          </div>
-        </div>
+        <div class="col" style="flex:1;"><div class="form-group"><label for="status_kk_tidak_pindah">Status No KK bagi yang tidak pindah *</label><select id="status_kk_tidak_pindah" oninput="debounceUpdate()" required><option value="">-- Pilih Status --</option><option value="Numpang KK">Numpang KK</option><option value="Membuat KK baru">Membuat KK baru</option><option value="Tidak Anggota KK yg tinggal">Tidak Anggota KK yg tinggal</option><option value="Nomor KK tetap">Nomor KK tetap</option></select></div></div>
+        <div class="col" style="flex:1;"><div class="form-group"><label for="status_kk_pindah">Status No KK bagi yang pindah *</label><select id="status_kk_pindah" oninput="debounceUpdate()" required><option value="">-- Pilih Status --</option><option value="Numpang KK">Numpang KK</option><option value="Membuat KK baru">Membuat KK baru</option><option value="Tidak Anggota KK yg tinggal">Tidak Anggota KK yg tinggal</option><option value="Nomor KK tetap">Nomor KK tetap</option></select></div></div>
       </div>
     </fieldset>
+
     <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Daerah Tujuan</legend>
+      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Nama Camat</legend>
       <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="nomor_kk_tujuan">Nomor KK</label>
-            <input id="nomor_kk_tujuan" type="text" oninput="debounceUpdate()">
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="nama_kk_tujuan">Nama KK</label>
-            <input id="nama_kk_tujuan" type="text" oninput="debounceUpdate()">
-          </div>
-        </div>
-      </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="tanggal_kedatangan">Tanggal Kedatangan</label>
-            <input id="tanggal_kedatangan" type="text" placeholder="Contoh: 26 Oktober 2023" oninput="debounceUpdate()">
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="alamat_baru">Alamat Baru</label>
-            <input id="alamat_baru" type="text" oninput="debounceUpdate()">
-          </div>
-        </div>
-      </div>
-    </fieldset>
-    <!-- MODIFIKASI: Tambahkan fieldset untuk nama camat -->
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Penandatangan</legend>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="nama_camat_atas">Nama Camat (Halaman 1)</label>
-            <input id="nama_camat_atas" type="text" oninput="debounceUpdate()" placeholder="Akan muncul di tanda tangan halaman pertama">
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="nama_camat_bawah">Nama Camat (Halaman 2)</label>
-            <input id="nama_camat_bawah" type="text" oninput="debounceUpdate()" placeholder="Akan muncul di tanda tangan halaman kedua">
-          </div>
-        </div>
+        <div class="col" style="flex:1;"><div class="form-group"><label for="nama_camat_atas">Nama Camat (Halaman 1)</label><input id="nama_camat_atas" type="text" oninput="debounceUpdate()"></div></div>
+  
       </div>
     </fieldset>
    `,
@@ -4341,7 +4251,7 @@ Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + 
     </div>
   `,
   // NEW LETTER TEMPLATE
-   pindah_masuk_keluar: data => `
+pindah_masuk_keluar: data => `
     <div class="letterhead">
       <div class="logo-placeholder">
         ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
@@ -4350,14 +4260,18 @@ Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + 
         <p style="font-size: 12pt; margin: 0;">PEMERINTAH KABUPATEN ${data.kota.toUpperCase() || 'KABUPATEN'}</p>
         <p style="font-size: 13pt; margin: 0;">KECAMATAN ${data.kecamatan.toUpperCase() || 'KECAMATAN'}</p>
         <p style="font-size: 14pt; margin: 0;">DESA ${data.desa.toUpperCase() || 'DESA'}</p>
-        <p style="font-size: 8pt; margin-top: 5px;">Alamat: Jl. Raya Lintas Timur No. 03 Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)}, Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}</p>
+        <p style="font-size: 8pt; margin-top: 5px;">Alamat: Jl. Raya Lintas Timur No. 03 Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
+        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}</p>
       </div>
     </div>
     <div class="center" style="margin-bottom: 20px;">
-      <h3 class="u">SURAT KETERANGAN PINDAH MASUK/KELUAR</h3>
+      <h3 class="u">SURAT KETERANGAN PINDAH KELUAR</h3>
       <p class="nomor-surat" style="font-size: 12pt; text-align: center; margin-top: 0; line-height: 1;">Nomor: ${data.nomorSurat || '...........................'}</p>
     </div>
-    <p class="indent justify">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)}, Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>
+
+    <p class="indent justify">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
+        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>
+    
     <table class="info">
       <tr><td>Nomor KK</td><td>:</td><td>${data.nomor_kk || '...........................'}</td></tr>
       <tr><td>Nama Kepala Keluarga</td><td>:</td><td>${data.nama_kepala_keluarga || '...........................'}</td></tr>
@@ -4367,64 +4281,65 @@ Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + 
       <tr><td>Jenis Kepindahan</td><td>:</td><td>${data.jenis_kepindahan || '...........................'}</td></tr>
       <tr><td>Tanggal Pindah</td><td>:</td><td>${data.tanggal_pindah || '...........................'}</td></tr>
     </table>
-    <div class="post-table-spacing"></div>
-    <p class="indent">Demikian surat keterangan ini dibuat, agar dapat dipergunakan sebagaimana mestinya.</p>
+
     
-    <div class="ttd-wrapper" style="margin-top: 100px;">
+
+    <!-- UPDATE BAGIAN 7: KELUARGA YANG PINDAH -->
+    <div style="margin-top: 20px; margin-bottom: 10px;">
+        <p style="font-weight: bold; margin-bottom: 10px;">Keluarga yang pindah</p>
+        <table class="tabel-ahli-waris">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">NO.</th>
+                    <th style="width: 25%;">NIK</th>
+                    <th style="width: 35%;">NAMA</th>
+                    <th style="width: 20%;">TGL. LAHIR</th>
+                    <th style="width: 15%;">SHD</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${data.anggotaKeluarga && data.anggotaKeluarga.length > 0 ? data.anggotaKeluarga.map(member => `
+                    <tr>
+                        <td style="text-align: center;">${member.no}</td>
+                        <td>${member.nik}</td>
+                        <td>${member.nama}</td>
+                        <td>${member.ttl}</td>
+                        <td>${member.shd}</td>
+                    </tr>
+                `).join('') : `
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td>............................</td>
+                        <td>............................</td>
+                        <td>............................</td>
+                        <td>............................</td>
+                    </tr>
+                `}
+            </tbody>
+        </table>
+    </div>
+    <!-- SELESAI UPDATE -->
+<div style="margin-top: 10px; margin-bottom: 20px;">
+        <p>Demikian surat keterangan ini dibuat, agar dapat dipergunakan sebagaimana mestinya.</p>
+    </div>
+     <div class="ttd-wrapper" style="margin-top: 40px;">
         <div class="ttd-row-top">
             <div class="ttd-col">
-			 <br><br>
                 <p>Mengetahui,</p>
-				 <br><br>
-                <p style="margin-top: 10px;"><strong>${data.nama_camat_atas || 'Camat ' + (data.kecamatan || 'Nama Kecamatan')}</strong></p>
-                
-                
-            </div>
-            <div class="ttd-col">
-			 <br><br>
-                <p>Pemohon,</p>
-                  <br><br>
-                <p style="margin-top: 10px;"><p><strong>(${data.nama_kepala_keluarga || 'Nama Kepala Keluarga'})</strong></p>
-            </div>
-            <div class="ttd-col">
-                <p>${data.desa ||'.............'}, ${data.tanggal || '..................'}</p>
-				<br>
-                <p style="margin-top: 6px;"><strong>Kepala Desa ${data.desa || 'Nama Desa'}</strong></p>
-                  <br><br>
-                <p><strong>(${data.nama_kepala || 'Nama Kepala Desa'})</strong></p>
-            </div>
-        </div>
-    </div>
-
-    <div style="page-break-after: always;"></div>
-
-    <div class="center" style="margin-bottom: 20px;">
-      <h3 class="u">DATA DAERAH TUJUAN</h3>
-    </div>
-    <table class="info">
-      <tr><td>Nomor KK</td><td>:</td><td>${data.nomor_kk_tujuan || '...........................'}</td></tr>
-      <tr><td>Nama KK</td><td>:</td><td>${data.nama_kk_tujuan || '...........................'}</td></tr>
-      <tr><td>Tanggal Kedatangan</td><td>:</td><td>${data.tanggal_kedatangan || '...........................'}</td></tr>
-      <tr><td>Alamat Baru</td><td>:</td><td>${data.alamat_baru || '...........................'}</td></tr>
-    </table>
-
-    <div class="ttd-wrapper" style="margin-top: 100px;">
-        <div class="ttd-row-top">
-            <div class="ttd-col">
-                <p>Mengetahui,</p>
-				 <br><br>
-                <p style="margin-top: 10px;"><strong>${data.nama_camat_bawah || 'Camat ' + (data.kecamatan || 'Nama Kecamatan')}</strong></p>
-             
+				<p>Camat Mataram Baru,</p>
+                <br><br>
+                <p style="margin-top: 10px;"><strong>(${data.nama_camat_atas || (data.kecamatan || '..................')})</strong></p>
             </div>
             <div class="ttd-col">
                 <p>Pemohon,</p>
-                 <br><br>
+                <br><br><br>
                 <p style="margin-top: 13px;">(${data.nama_kepala_keluarga || 'Nama Kepala Keluarga'})</strong></p>
             </div>
             <div class="ttd-col">
-                <p>${data.desa ||'.............'}, ${data.tanggal || '..................'}</p>
-                <p style="margin-top: -5px;"><strong>Kepala Desa ${data.desa || 'Nama Desa'}</strong></p>
-                  <br><br>
+                <p style="margin-top: -13px;">${data.desa ||'.............'}, ${data.tanggal || '..................'}</strong></p></p>
+				
+                <p style="margin-top: -2px;"><strong>Kepala Desa ${data.desa || 'Nama Desa'}</strong></p>
+                <br><br><br>
                 <p><strong>(${data.nama_kepala || 'Nama Kepala Desa'})</strong></p>
             </div>
         </div>
@@ -4514,7 +4429,36 @@ Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + 
 };
 
 // --- HELPER FUNCTIONS ---
-// --- HELPER FUNCTIONS ---
+// --- FUNGSI HELPER UNTUK BARIS DINAMIS ---
+function tambahKeluargaPindah() {
+  const container = document.getElementById('keluarga_pindah_container');
+  const newRow = document.createElement('div');
+  newRow.className = 'row keluarga_pindah_row';
+  newRow.style.cssText = 'display:flex; gap:10px; margin-bottom:10px; align-items: flex-start;';
+  
+  newRow.innerHTML = `
+      <div class="col" style="flex:0.5;"><div class="form-group"><label>NIK</label><input type="text" class="nik-anggota" oninput="debounceUpdate()"></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Nama</label><input type="text" class="nama-anggota" oninput="debounceUpdate()"></div></div>
+      <div class="col" style="flex:0.8;"><div class="form-group"><label>Tgl Lahir</label><input type="text" class="ttl-anggota" placeholder="09-11-1940" oninput="debounceUpdate()"></div></div>
+      <div class="col" style="flex:0.6;"><div class="form-group"><label>SHD</label><input type="text" class="shd-anggota" placeholder="Kepala Keluarga" oninput="debounceUpdate()"></div></div>
+      <div class="col" style="flex:0.2; padding-top:24px;"><button type="button" class="btn btn-danger" onclick="hapusKeluargaPindah(this)" title="Hapus Baris"><i class="fas fa-times"></i></button></div>
+  `;
+  container.appendChild(newRow);
+  debounceUpdate();
+}
+
+function hapusKeluargaPindah(btn) {
+  const row = btn.closest('.keluarga_pindah_row');
+  const container = document.getElementById('keluarga_pindah_container');
+  // Mencegah menghapus semua baris (minimal satu)
+  if (container.querySelectorAll('.keluarga_pindah_row').length > 1) {
+      row.remove();
+      debounceUpdate();
+  } else {
+      alert("Minimal harus ada satu anggota keluarga.");
+  }
+}
+
 function getAllData() {
   const data = {};
   // Data dari Sidebar (Identitas Desa)
@@ -4867,7 +4811,7 @@ case 'ahli_waris':
       data.alasan_perubahan = document.getElementById('alasan_perubahan')?.value || '';
       break;
 
-    case 'pindah_masuk_keluar':
+   case 'pindah_masuk_keluar':
       data.nomor_kk = document.getElementById('nomor_kk')?.value || '';
       data.nama_kepala_keluarga = document.getElementById('nama_kepala_keluarga')?.value || '';
       data.alamat_tujuan_pindah = document.getElementById('alamat_tujuan_pindah')?.value || '';
@@ -4883,6 +4827,19 @@ case 'ahli_waris':
       data.alamat_baru = document.getElementById('alamat_baru')?.value || '';
       data.nama_camat_atas = document.getElementById('nama_camat_atas')?.value || '';
       data.nama_camat_bawah = document.getElementById('nama_camat_bawah')?.value || '';
+      
+      // LOGIKA BARU: Ambil Data Anggota Keluarga
+      data.anggotaKeluarga = [];
+      const rows = document.querySelectorAll('.keluarga_pindah_row');
+      rows.forEach((row, index) => {
+        data.anggotaKeluarga.push({
+          no: index + 1,
+          nik: row.querySelector('.nik-anggota')?.value || '',
+          nama: row.querySelector('.nama-anggota')?.value || '',
+          ttl: row.querySelector('.ttl-anggota')?.value || '',
+          shd: row.querySelector('.shd-anggota')?.value || ''
+        });
+      });
       break;
     
     case 'hibah':
