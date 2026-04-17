@@ -4460,70 +4460,80 @@ pindah_masuk_keluar: data => `
     <p>4. ${data.saksi4 || '............................'}</p>
   </div>
 `,
-  izin_orang_tua: data => `
+    izin_orang_tua: data => `
     <div class="letterhead">
       <div class="logo-placeholder">
         ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
       </div>
       <div class="letterhead-text">
-        <p style="font-size: 12pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
-        <p style="font-size: 13pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
-        <p style="font-size: 14pt; margin: 0;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
-        <p style="font-size: 8pt; margin-top: 5px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
+        <p style="font-size: 11pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
+        <p style="font-size: 12pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
+        <p style="font-size: 13pt; margin: 0;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
+        <p style="font-size: 7pt; margin-top: 3px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
       </div>
     </div>
-    <div class="center" style="margin-bottom: 10px;">
-      <h3 class="u" style="margin: 5px 0;">SURAT KETERANGAN IZIN ORANG TUA</h3>
-      <p class="nomor-surat" style="font-size: 11pt; text-align: center; margin: 0;">Nomor: ${data.nomorSurat || '...........................'}</p>
+    <div class="center" style="margin-bottom: 8px;">
+      <h3 class="u" style="margin: 3px 0; font-size: 13pt;">SURAT KETERANGAN IZIN ORANG TUA</h3>
+      <p class="nomor-surat" style="font-size: 10pt; text-align: center; margin: 0;">Nomor: ${data.nomorSurat || '...........................'}</p>
     </div>
     
-    <p class="indent" style="margin: 5px 0;">Yang bertanda tangan di bawah ini :</p>
-    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 5px;">
-      <tr><td style="width: 35%;">Nama</td><td style="width: 5%;">:</td><td>${data.nama_pemberi || '...........................'}</td></tr>
-      <tr><td>NIK</td><td>:</td><td>${data.nik_pemberi || '...........................'}</td></tr>
-      <tr><td>Jenis Kelamin</td><td>:</td><td>${data.jk_pemberi || '...........................'}</td></tr>
-      <tr><td>Tempat/Tgl Lahir</td><td>:</td><td>${data.ttl_pemberi || '...........................'}</td></tr>
-      <tr><td>Alamat</td><td>:</td><td>${data.alamat_pemberi || '...........................'}</td></tr>
-      <tr><td>Hubungan</td><td>:</td><td>${data.hubungan_pemberi || '...........................'}</td></tr>
+    <p class="indent" style="margin: 3px 0; line-height: 1.2;">Yang bertanda tangan di bawah ini :</p>
+    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 3px; line-height: 1.2;">
+      <tr><td style="width: 35%; padding: 2px 8px;">Nama</td><td style="width: 5%; padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nama_pemberi || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">NIK</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nik_pemberi || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Jenis Kelamin</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.jk_pemberi || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Tempat/Tgl Lahir</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.ttl_pemberi || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Alamat</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.alamat_pemberi || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Hubungan</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.hubungan_pemberi || '...........................'}</td></tr>
     </table>
     
-    <p class="indent" style="margin: 3px 0;">Dengan ini menyatakan memberikan izin kepada :</p>
-    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 5px;">
-      <tr><td style="width: 35%;">Nama</td><td style="width: 5%;">:</td><td>${data.nama_penerima || '...........................'}</td></tr>
-      <tr><td>NIK</td><td>:</td><td>${data.nik_penerima || '...........................'}</td></tr>
-      <tr><td>Jenis Kelamin</td><td>:</td><td>${data.jk_penerima || '...........................'}</td></tr>
-      <tr><td>Tempat/Tgl Lahir</td><td>:</td><td>${data.ttl_penerima || '...........................'}</td></tr>
-      <tr><td>Alamat</td><td>:</td><td>${data.alamat_penerima || '...........................'}</td></tr>
-      <tr><td>Hubungan</td><td>:</td><td>${data.hubungan_penerima || '...........................'}</td></tr>
+    <p class="indent" style="margin: 2px 0; line-height: 1.2;">Dengan ini menyatakan memberikan izin kepada :</p>
+    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 3px; line-height: 1.2;">
+      <tr><td style="width: 35%; padding: 2px 8px;">Nama</td><td style="width: 5%; padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nama_penerima || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">NIK</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nik_penerima || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Jenis Kelamin</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.jk_penerima || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Tempat/Tgl Lahir</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.ttl_penerima || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Alamat</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.alamat_penerima || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Hubungan</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.hubungan_penerima || '...........................'}</td></tr>
     </table>
     
-    <p class="indent" style="margin: 3px 0;">Saya selaku <strong>${data.hubungan_pemberi || '.............'}</strong> dari <strong>${data.nama_penerima || '.............'}</strong> memberikan izin kepada yang tersebut di atas untuk menjadi :</p>
-    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 5px;">
-      <tr><td style="width: 35%;">Pekerjaan</td><td style="width: 5%;">:</td><td>${data.pekerjaan_tujuan || '...........................'}</td></tr>
-      <tr><td>Negara Tujuan</td><td>:</td><td>${data.negara_tujuan || '...........................'}</td></tr>
+    <p class="indent" style="margin: 2px 0; line-height: 1.2;">Saya selaku <strong>${data.hubungan_pemberi || '.............'}</strong> dari <strong>${data.nama_penerima || '.............'}</strong> memberikan izin kepada yang tersebut di atas untuk menjadi :</p>
+    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 3px; line-height: 1.2;">
+      <tr><td style="width: 35%; padding: 2px 8px;">Pekerjaan</td><td style="width: 5%; padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.pekerjaan_tujuan || '...........................'}</td></tr>
+      <tr><td style="padding: 2px 8px;">Negara Tujuan</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.negara_tujuan || '...........................'}</td></tr>
     </table>
     
-    <p class="indent" style="margin: 3px 0;">dan akan memberikan dukungan sepenuhnya serta tanggung jawab apabila terjadi hal yang melanggar hukum yang dapat merugikan Perusahaan.</p>
-    <p class="indent" style="margin: 3px 0;">Demikian surat keterangan izin orang tua ini dibuat dengan sebenar-benarnya tanpa paksaan dan dapat dipertanggungjawabkan.</p>
+    <p class="indent" style="margin: 2px 0; line-height: 1.2;">dan akan memberikan dukungan sepenuhnya serta tanggung jawab apabila terjadi hal yang melanggar hukum yang dapat merugikan Perusahaan.</p>
+    <p class="indent" style="margin: 2px 0; line-height: 1.2;">Demikian surat keterangan izin orang tua ini dibuat dengan sebenar-benarnya tanpa paksaan dan dapat dipertanggungjawabkan.</p>
     
-    <!-- Tanda Tangan: Pemberi Izin di Kiri, Kepala Desa di Kanan (SEJAJAR SEPERTI YANG DIMINTA) -->
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 25px;">
-        
-        <!-- Kiri: Yang Memberi Izin -->
-        <div style="text-align: center; width: 45%;">
-            <p>Yang Memberi Izin,</p>
-            <br><br><br>
-            <p><strong>(${data.nama_pemberi || '...........................'})</strong></p>
+    <!-- Tanda Tangan: Tempat/Tanggal di atas Kanan, sejajar dengan Yang Memberi Izin -->
+    <div style="margin-top: 20px;">
+        <div style="display: flex; justify-content: space-between;">
+            <!-- KIRI: Yang diberi Izin -->
+            <div style="text-align: center; width: 45%;">
+                <p style="margin: 2px 0;">&nbsp;</p>
+                <p style="margin: 2px 0;">Yang diberi Izin</p>
+                <br><br><br>
+                <p style="margin: 2px 0;"><strong>(${data.nama_penerima || '...........................'})</strong></p>
+            </div>
+            
+            <!-- KANAN: Tempat/Tanggal (di atas) + Yang Memberi Izin -->
+            <div style="text-align: center; width: 45%;">
+                <p style="margin: 2px 0;">${data.desa || '.............'}, ${data.tanggal || '..................'}</p>
+                <p style="margin: 2px 0;">Yang Memberi Izin</p>
+                <p style="margin: 2px 0;">Orang Tua</p>
+                <br><br>
+                <p style="margin: 2px 0;"><strong>(${data.nama_pemberi || '...........................'})</strong></p>
+            </div>
         </div>
         
-        <!-- Kanan: Desa, Tanggal (di atas) + Kepala Desa (sejajar dengan Yang Memberi Izin) -->
-        <div style="text-align: center; width: 45%;">
-            <p style="margin-bottom: 20px;">${data.desa || '.............'}, ${data.tanggal || '..................'}</p>
-            <p>Kepala Desa ${data.desa || '.............'}</p>
+        <!-- Mengetahui, Kepala Desa (Tengah) -->
+        <div style="text-align: center; margin-top: 25px;">
+            <p style="margin: 2px 0;">Mengetahui,</p>
+            <p style="margin: 2px 0;"><strong>Kepala Desa ${data.desa || 'Teluk Dalem'}</strong></p>
             <br><br><br>
-            <p><strong>(${data.nama_kepala || '...........................'})</strong></p>
+            <p style="margin: 2px 0;"><strong>(${data.nama_kepala || '...........................'})</strong></p>
         </div>
-        
     </div>
   `,
 };
