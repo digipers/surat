@@ -581,7 +581,7 @@
         <option value="dom_asset">6. Surat Domisili Asset (479)</option>
         <option value="kematian">7. Surat Keterangan Kematian (479)</option>
         <option value="ahli_waris">8. Surat Keterangan Ahli Waris</option>
-        <option value="kelahiran">9. Surat Keterangan Kelahiran (479)</option>
+        <option value="kelahiran">9. Surat Keterangan Kenal Lahir (479)</option>
         <option value="tanah">10. Surat Keterangan Tanah/Bangunan (343)</option>
         <option value="skck">11. Surat Pengantar Pembuatan SKCK (331)</option>
         <option value="beda_identitas">12. Surat Keterangan Beda Identitas (500)</option>
@@ -1475,49 +1475,48 @@ const formTemplates = {
     </div>
   </fieldset>
 `,
-  kelahiran: `
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Identitas Anak</legend>
-      <div class="form-group">
-        <label for="nama">Nama Lengkap *</label>
-        <input id="nama" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Nama harus diisi.</span>
-      </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="ttl">Tempat / Tanggal Lahir *</label>
-            <input id="ttl" type="text" oninput="debounceUpdate()" required>
-            <span class="error-message">Tempat/Tanggal lahir harus diisi.</span>
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="jenis_kelamin">Jenis Kelamin *</label>
-            <select id="jenis_kelamin" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih --</option>
-              <option value="Laki-laki">Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
-            <span class="error-message">Jenis kelamin harus diisi.</span>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Identitas Orang Tua</legend>
-      <div class="form-group">
-        <label for="nama_ibu">Nama Ibu *</label>
-        <input id="nama_ibu" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Nama ibu harus diisi.</span>
-      </div>
-      <div class="form-group">
-        <label for="nama_ayah">Nama Ayah *</label>
-        <input id="nama_ayah" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Nama ayah harus diisi.</span>
-      </div>
-    </fieldset>
-  `,
+ kelahiran: `
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Ayah Kandung</legend>
+    <div class="form-group"><label>Nama Ayah</label><input id="ayah_nama" type="text" oninput="debounceUpdate()" required></div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col"><div class="form-group"><label>Tempat/Tgl Lahir Ayah</label><input id="ayah_ttl" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col"><div class="form-group"><label>Agama Ayah</label><input id="ayah_agama" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col"><div class="form-group"><label>Pekerjaan Ayah</label><input id="ayah_pekerjaan" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col"><div class="form-group"><label>NIK Ayah</label><input id="ayah_ktp" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+   
+    <div class="form-group"><label>Alamat Ayah</label><input id="ayah_alamat" type="text" placeholder="Dusun ... RT ... RW ... Desa ... Kecamatan ... Kabupaten ..." oninput="debounceUpdate()" required></div>
+  </fieldset>
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Ibu Kandung</legend>
+    <div class="form-group"><label>Nama Ibu</label><input id="ibu_nama" type="text" oninput="debounceUpdate()" required></div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col"><div class="form-group"><label>Tempat/Tgl Lahir Ibu</label><input id="ibu_ttl" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col"><div class="form-group"><label>Agama Ibu</label><input id="ibu_agama" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col"><div class="form-group"><label>Pekerjaan Ibu</label><input id="ibu_pekerjaan" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col"><div class="form-group"><label>NIK Ibu</label><input id="ibu_nik" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Ibu</label><input id="ibu_alamat" type="text" placeholder="Dusun ... RT ... RW ... Desa ... Kecamatan ... Kabupaten ..." oninput="debounceUpdate()" required></div>
+  </fieldset>
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Anak</legend>
+    <div class="form-group"><label>Nama Anak</label><input id="anak_nama" type="text" oninput="debounceUpdate()" required></div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col"><div class="form-group"><label>Tempat/Tgl Lahir Anak</label><input id="anak_ttl" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col"><div class="form-group"><label>Jenis Kelamin</label><select id="anak_jk" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col"><div class="form-group"><label>Anak ke-</label><input id="anak_ke" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col"><div class="form-group"><label>Lahir di</label><input id="anak_lahir_di" type="text" placeholder="Rumah/Klinik/RS" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Anak</label><input id="anak_alamat" type="text" placeholder="Dusun ... RT ... RW ... Desa ... Kecamatan ... Kabupaten ..." oninput="debounceUpdate()" required></div>
+  </fieldset>
+`,
   tanah: `
     <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
       <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Identitas Pemilik</legend>
@@ -3730,56 +3729,61 @@ domisili: data => `
     </div>
   </div>
 `,
-  kelahiran: data => `
-    <div class="letterhead">
-      <div class="logo-placeholder">
-        ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
-      </div>
-      <div class="letterhead-text">
-        <p style="font-size: 12pt; margin: 0;">PEMERINTAH KABUPATEN ${data.kota.toUpperCase() || 'KABUPATEN'}</p>
-        <p style="font-size: 13pt; margin: 0;">KECAMATAN ${data.kecamatan.toUpperCase() || 'KECAMATAN'}</p>
-        <p style="font-size: 14pt; margin: 0;">DESA ${data.desa.toUpperCase() || 'DESA'}</p>
-        <p style="font-size: 8pt; margin-top: 5px;">Jl. Raya Lintas Timur N0. 03 Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
-        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}</p>
-      </div>
+ kelahiran: data => `
+  <div class="letterhead">
+    <div class="logo-placeholder">${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}</div>
+    <div class="letterhead-text">
+      <p style="font-size:12pt; margin:0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
+      <p style="font-size:13pt; margin:0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
+      <p style="font-size:14pt; margin:0;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
     </div>
-    <div class="center" style="margin-bottom: 20px;">
-      <h3 class="u">SURAT KETERANGAN KELAHIRAN</h3>
-      <p class="nomor-surat" style="font-size: 12pt; text-align: center; margin-top: 0; line-height: 1;">Nomor: ${data.nomorSurat || '...........................'}</p>
-    </div>
+  </div>
+  <div class="center" style="margin-bottom:15px;">
+    <h3 class="u">SURAT KETERANGAN KENAL LAHIR</h3>
+    <p>Nomor: ${data.nomorSurat || '...........................'}</p>
+  </div>
+  <p>Yang bertanda tangan di bawah ini, Kepala Desa ${data.desa || '......'} Kecamatan ${data.kecamatan || '......'} Kabupaten ${data.kota || '......'} menerangkan berdasarkan keterangan dari :</p>
+  
+  <p><strong>I.Ayah Kandung</strong></p>
+  <table class="info" style="width:100%; border-collapse:collapse;">
+    <tr><td style="width:35%; padding:4px 0;">Nama</td><td style="width:3%; padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_nama || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Tempat/Tgl Lahir</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_ttl || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Agama</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_agama || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Pekerjaan</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_pekerjaan || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Nomor KTP</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_ktp || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">NIK</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_nik || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Alamat</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ayah_alamat || '...........................'}</td></tr>
+  </table>
 
-<p class="indent justify">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
-Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>
-<p class="indent">Berdasarkan laporan dari orang tua, telah lahir seorang anak :</p>
-<table class="info">
-<tr><td>Nama Anak</td><td>:</td><td>${data.nama || '...........................'}</td></tr>
-<tr><td>Hari/Tanggal</td><td>:</td><td>${data.ttl || '...........................'}</td></tr>
-<tr><td>Jenis Kelamin</td><td>:</td><td>${data.jenis_kelamin || '...........................'}</td></tr>
-</table>
-<div class="post-table-spacing"></div>
-<p class="indent">dari pasangan suami istri sebagai berikut:</p>
-<table class="info">
-<tr><td>Nama Ibu</td><td>:</td><td>${data.nama_ibu || '...........................'}</td></tr>
-<tr><td>Nama Ayah</td><td>:</td><td>${data.nama_ayah || '...........................'}</td></tr>
-</table>
-<div class="post-table-spacing"></div>
-<p class="indent">Demikian surat keterangan kelahiran ini dibuat untuk keperluan administrasi kependudukan.</p>
-<div class="ttd-container">
-<div class="ttd-box">
-<div style="height: 0px;"></div>
-<p>${data.desa ||'.............'}, ${data.tanggal || '..................'}</p>
- ${data.penandatangan === 'sekretaris_desa' ? `
-<p style="text-align: center; margin-top: 10px;">An. Kepala Desa ${data.desa || 'Nama Desa'}</p>
-<p style="font-weight: bold; text-align: center;">Sekertaris Desa</p>
-<div style="height: 35px;"></div>
-<p class="u"><strong>${data.nama_sekretaris.toUpperCase() || 'NAMA SEKRETARIS DESA'}</strong></p>
-` : `
-<p style="font-weight: bold;">Kepala Desa ${data.desa || 'Nama Desa'}</p>
-<div style="height: 35px;"></div>
-<p class="u"><strong>${data.nama_kepala.toUpperCase() || 'Nama Kepala Desa'}</strong></p>
-`}
-</div>
-</div>
+  <p><strong>II.Ibu Kandung</strong></p>
+  <table class="info" style="width:100%; border-collapse:collapse;">
+    <tr><td style="width:35%; padding:4px 0;">Nama</td><td style="width:3%; padding:4px 0;">:</td><td style="padding:4px 0;">${data.ibu_nama || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Tempat/Tgl Lahir</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ibu_ttl || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Agama</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ibu_agama || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Pekerjaan</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ibu_pekerjaan || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">NIK</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ibu_nik || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Alamat</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.ibu_alamat || '...........................'}</td></tr>
+  </table>
+
+  <p>Telah lahir seorang anak : <strong>${data.anak_jk || '................'}</strong></p>
+  <table class="info" style="width:100%; border-collapse:collapse;">
+    <tr><td style="width:35%; padding:4px 0;">Nama</td><td style="width:3%; padding:4px 0;">:</td><td style="padding:4px 0;">${data.anak_nama || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Tempat / Tgl Lahir</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.anak_ttl || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Anak ke</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.anak_ke || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Lahir di</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.anak_lahir_di || '...........................'}</td></tr>
+    <tr><td style="padding:4px 0;">Alamat</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.anak_alamat || '...........................'}</td></tr>
+  </table>
+
+  <p>Demikian surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
+  
+  <div class="ttd-container">
+    <div class="ttd-box">
+      <p>${data.desa || '.............'}, ${data.tanggal || '..................'}</p>
+      <p>Kepala Desa ${data.desa || 'Nama Desa'}</p>
+      <div style="height:35px;"></div>
+      <p class="u"><strong>${(data.nama_kepala || 'Nama Kepala Desa').toUpperCase()}</strong></p>
+    </div>
+  </div>
 `,
 tanah: data => `
 <div class="letterhead">
@@ -5230,13 +5234,27 @@ case 'ahli_waris':
   data.keperluan_surat = document.getElementById('keperluan_surat')?.value || '';
   break;
 
-    case 'kelahiran':
-      data.nama = document.getElementById('nama')?.value || '';
-      data.ttl = document.getElementById('ttl')?.value || '';
-      data.jenis_kelamin = document.getElementById('jenis_kelamin')?.value || '';
-      data.nama_ibu = document.getElementById('nama_ibu')?.value || '';
-      data.nama_ayah = document.getElementById('nama_ayah')?.value || '';
-      break;
+   case 'kelahiran':
+  data.ayah_nama = document.getElementById('ayah_nama')?.value || '';
+  data.ayah_ttl = document.getElementById('ayah_ttl')?.value || '';
+  data.ayah_agama = document.getElementById('ayah_agama')?.value || '';
+  data.ayah_pekerjaan = document.getElementById('ayah_pekerjaan')?.value || '';
+  data.ayah_ktp = document.getElementById('ayah_ktp')?.value || '';
+  data.ayah_nik = document.getElementById('ayah_nik')?.value || '';  // <-- TAMBAHKAN INI
+  data.ayah_alamat = document.getElementById('ayah_alamat')?.value || '';
+  data.ibu_nama = document.getElementById('ibu_nama')?.value || '';
+  data.ibu_ttl = document.getElementById('ibu_ttl')?.value || '';
+  data.ibu_agama = document.getElementById('ibu_agama')?.value || '';
+  data.ibu_pekerjaan = document.getElementById('ibu_pekerjaan')?.value || '';
+  data.ibu_nik = document.getElementById('ibu_nik')?.value || '';
+  data.ibu_alamat = document.getElementById('ibu_alamat')?.value || '';
+  data.anak_nama = document.getElementById('anak_nama')?.value || '';
+  data.anak_ttl = document.getElementById('anak_ttl')?.value || '';
+  data.anak_jk = document.getElementById('anak_jk')?.value || '';
+  data.anak_ke = document.getElementById('anak_ke')?.value || '';
+  data.anak_lahir_di = document.getElementById('anak_lahir_di')?.value || '';
+  data.anak_alamat = document.getElementById('anak_alamat')?.value || '';
+  break;
 
     case 'tanah':
       data.nama = document.getElementById('nama')?.value || '';
