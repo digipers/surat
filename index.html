@@ -1213,95 +1213,96 @@ const formTemplates = {
     </fieldset>
   `,
   kematian: `
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Identitas Pelapor</legend>
-      <div class="form-group">
-        <label for="nama_pelapor">Nama Pelapor *</label>
-        <input id="nama_pelapor" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Nama pelapor harus diisi.</span>
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Almarhum/Almarhumah</legend>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="nama_jenazah">Nama Lengkap *</label><input id="nama_jenazah" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div>
       </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="umur_pelapor">Umur Pelapor *</label>
-            <input id="umur_pelapor" type="text" oninput="debounceUpdate()" required>
-            <span class="error-message">Umur pelapor harus diisi.</span>
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="jenis_kelamin_pelapor">Jenis Kelamin Pelapor *</label>
-            <select id="jenis_kelamin_pelapor" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih --</option>
-              <option value="Laki-laki">Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
-            <span class="error-message">Jenis kelamin pelapor harus diisi.</span>
-          </div>
-        </div>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="jk_jenazah">Jenis Kelamin *</label><select id="jk_jenazah" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select><span class="error-message">Jenis kelamin harus diisi.</span></div>
       </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="agama_pelapor">Agama Pelapor *</label>
-            <select id="agama_pelapor" oninput="debounceUpdate()" required>
-              <option value="">-- Pilih --</option>
-              <option value="Islam">Islam</option>
-              <option value="Kristen">Kristen</option>
-              <option value="Katolik">Katolik</option>
-              <option value="Hindu">Hindu</option>
-              <option value="Buddha">Buddha</option>
-              <option value="Konghucu">Konghucu</option>
-            </select>
-            <span class="error-message">Agama pelapor harus diisi.</span>
-          </div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group">
-            <label for="pekerjaan_pelapor">Pekerjaan Pelapor *</label>
-            <input id="pekerjaan_pelapor" type="text" oninput="debounceUpdate()" required>
-            <span class="error-message">Pekerjaan pelapor harus diisi.</span>
-          </div>
-        </div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="ttl_jenazah">Tempat/Tanggal Lahir *</label><input id="ttl_jenazah" type="text" placeholder="Contoh: Jakarta, 10 Mei 1970" oninput="debounceUpdate()" required><span class="error-message">Tempat/tanggal lahir harus diisi.</span></div>
       </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;">
-          <div class="form-group"><label for="dusun_pelapor">Dusun Pelapor *</label><input id="dusun_pelapor" type="text" oninput="debounceUpdate()" required><span class="error-message">Dusun pelapor harus diisi.</span></div>
-        </div>
-        <div class="col" style="flex:1;">
-          <div class="form-group"><label for="rt_pelapor">RT Pelapor *</label><input id="rt_pelapor" type="text" oninput="debounceUpdate()" required><span class="error-message">RT pelapor harus diisi.</span></div>
-        </div>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="agama_jenazah">Agama *</label><select id="agama_jenazah" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option><option value="Konghucu">Konghucu</option></select><span class="error-message">Agama harus diisi.</span></div>
       </div>
-    </fieldset>
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Jenazah</legend>
-      <div class="form-group">
-        <label for="nama_jenazah">Nama Lengkap Yang Meninggal *</label>
-        <input id="nama_jenazah" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Nama jenazah harus diisi.</span>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="status_perkawinan_jenazah">Status Perkawinan *</label><select id="status_perkawinan_jenazah" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Belum Kawin">Belum Kawin</option><option value="Kawin">Kawin</option><option value="Cerai Hidup">Cerai Hidup</option><option value="Cerai Mati">Cerai Mati</option></select><span class="error-message">Status perkawinan harus diisi.</span></div>
       </div>
-      <div class="form-group">
-        <label for="tempat_meninggal">Meninggal Di *</label>
-        <input id="tempat_meninggal" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Tempat meninggal harus diisi.</span>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="pekerjaan_jenazah">Pekerjaan *</label><input id="pekerjaan_jenazah" type="text" oninput="debounceUpdate()" required><span class="error-message">Pekerjaan harus diisi.</span></div>
       </div>
-      <div class="form-group">
-        <label for="tanggal_meninggal">Tanggal Meninggal *</label>
-        <input id="tanggal_meninggal" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Tanggal meninggal harus diisi.</span>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="nik_jenazah">Nomor NIK KTP *</label><input id="nik_jenazah" type="text" oninput="debounceUpdate()" required><span class="error-message">NIK harus diisi.</span></div>
       </div>
-      <div class="form-group">
-        <label for="penyebab_meninggal">Penyebab Meninggal *</label>
-        <input id="penyebab_meninggal" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Penyebab meninggal harus diisi.</span>
+    </div>
+    <div class="form-group"><label for="alamat_jenazah">Alamat *</label><textarea id="alamat_jenazah" rows="2" placeholder="Dusun, RT, RW, Desa, Kecamatan, Kabupaten" oninput="debounceUpdate()" required></textarea><span class="error-message">Alamat harus diisi.</span></div>
+  </fieldset>
+
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Meninggal Dunia</legend>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="hari_meninggal">Hari *</label><input id="hari_meninggal" type="text" placeholder="Contoh: Senin" oninput="debounceUpdate()" required><span class="error-message">Hari harus diisi.</span></div>
       </div>
-      <div class="form-group">
-        <label for="keperluan_surat">Keperluan Surat *</label>
-        <input id="keperluan_surat" type="text" oninput="debounceUpdate()" required>
-        <span class="error-message">Keperluan surat harus diisi.</span>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="tanggal_meninggal">Tanggal *</label><input id="tanggal_meninggal" type="text" placeholder="Contoh: 25 Desember 2023" oninput="debounceUpdate()" required><span class="error-message">Tanggal harus diisi.</span></div>
       </div>
-    </fieldset>
-  `,
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="sebab_meninggal">Sebab Meninggal *</label><input id="sebab_meninggal" type="text" placeholder="Contoh: Sakit tua, Kecelakaan" oninput="debounceUpdate()" required><span class="error-message">Sebab meninggal harus diisi.</span></div>
+      </div>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="tempat_meninggal">Meninggal di *</label><input id="tempat_meninggal" type="text" placeholder="Contoh: Rumah Sakit, Rumah" oninput="debounceUpdate()" required><span class="error-message">Tempat meninggal harus diisi.</span></div>
+      </div>
+    </div>
+    <div class="form-group"><label for="umur_meninggal">Umur pada saat meninggal *</label><input id="umur_meninggal" type="text" placeholder="Contoh: 65 tahun" oninput="debounceUpdate()" required><span class="error-message">Umur harus diisi.</span></div>
+  </fieldset>
+
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Pelapor</legend>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="nama_pelapor">Nama *</label><input id="nama_pelapor" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div>
+      </div>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="jk_pelapor">Jenis Kelamin *</label><select id="jk_pelapor" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select><span class="error-message">Jenis kelamin harus diisi.</span></div>
+      </div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="ttl_pelapor">Tempat/Tanggal Lahir *</label><input id="ttl_pelapor" type="text" placeholder="Contoh: Jakarta, 10 Mei 1970" oninput="debounceUpdate()" required><span class="error-message">Tempat/tanggal lahir harus diisi.</span></div>
+      </div>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="agama_pelapor">Agama *</label><select id="agama_pelapor" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option><option value="Konghucu">Konghucu</option></select><span class="error-message">Agama harus diisi.</span></div>
+      </div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="status_perkawinan_pelapor">Status Perkawinan *</label><select id="status_perkawinan_pelapor" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Belum Kawin">Belum Kawin</option><option value="Kawin">Kawin</option><option value="Cerai Hidup">Cerai Hidup</option><option value="Cerai Mati">Cerai Mati</option></select><span class="error-message">Status perkawinan harus diisi.</span></div>
+      </div>
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="pekerjaan_pelapor">Pekerjaan *</label><input id="pekerjaan_pelapor" type="text" oninput="debounceUpdate()" required><span class="error-message">Pekerjaan harus diisi.</span></div>
+      </div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;">
+        <div class="form-group"><label for="nik_pelapor">Nomor NIK KTP *</label><input id="nik_pelapor" type="text" oninput="debounceUpdate()" required><span class="error-message">NIK harus diisi.</span></div>
+      </div>
+    </div>
+    <div class="form-group"><label for="alamat_pelapor">Alamat *</label><textarea id="alamat_pelapor" rows="2" placeholder="Dusun, RT, RW, Desa, Kecamatan, Kabupaten" oninput="debounceUpdate()" required></textarea><span class="error-message">Alamat harus diisi.</span></div>
+    <div class="form-group"><label for="hubungan_pelapor">Hubungan dengan yang bersangkutan *</label><input id="hubungan_pelapor" type="text" placeholder="Contoh: Anak kandung, Istri, Kakak" oninput="debounceUpdate()" required><span class="error-message">Hubungan harus diisi.</span></div>
+  </fieldset>
+`,
   ahli_waris: `
   <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
     <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Pewaris</legend>
@@ -3578,61 +3579,69 @@ domisili: data => `
       </div>
     </div>
   `,
-  kematian: data => `
-    <div class="letterhead">
-      <div class="logo-placeholder">
-        ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
-      </div>
-      <div class="letterhead-text">
-        <p style="font-size: 12pt; margin: 0;">PEMERINTAH KABUPATEN ${data.kota.toUpperCase() || 'KABUPATEN'}</p>
-        <p style="font-size: 13pt; margin: 0;">KECAMATAN ${data.kecamatan.toUpperCase() || 'KECAMATAN'}</p>
-        <p style="font-size: 14pt; margin: 0;">DESA ${data.desa.toUpperCase() || 'DESA'}</p>
-        <p style="font-size: 8pt; margin-top: 5px;">Jl. Raya Lintas Timur N0. 03 Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
-        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}</p>
-      </div>
+kematian: data => `
+  <div class="letterhead" style="margin-bottom: 10px;">
+    <div class="logo-placeholder" style="width: 50px; height: 60px; margin-right: 12px;">
+      ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
     </div>
-        <div class="center" style="margin-bottom: 20px;">
-      <h3 class="u">SURAT KETERANGAN KEMATIAN</h3>
-      <p class="nomor-surat" style="font-size: 12pt; text-align: center; margin-top: 0; line-height: 1;">Nomor: ${data.nomorSurat || '...........................'}</p>
+    <div class="letterhead-text">
+      <p style="font-size: 10pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
+      <p style="font-size: 11pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
+      <p style="font-size: 12pt; margin: 0; font-weight: bold;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
+      <p style="font-size: 6pt; margin-top: 2px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
     </div>
-<p class="indent justify">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)},
-        Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>    <p class="indent">Berdasarkan laporan dari:</p>
-    <table class="info">
-      <tr><td>Nama Pelapor</td><td>:</td><td>${data.nama_pelapor || '...........................'}</td></tr>
-      <tr><td>Umur Pelapor</td><td>:</td><td>${data.umur_pelapor || '...........................'}</td></tr>
-      <tr><td>Jenis Kelamin Pelapor</td><td>:</td><td>${data.jenis_kelamin_pelapor || '...........................'}</td></tr>
-      <tr><td>Agama Pelapor</td><td>:</td><td>${data.agama_pelapor || '...........................'}</td></tr>
-      <tr><td>Pekerjaan Pelapor</td><td>:</td><td>${data.pekerjaan_pelapor || '...........................'}</td></tr>
-      <tr><td>Alamat Pelapor</td><td>:</td><td>Dusun ${data.dusun_pelapor || '...'} RT ${data.rt_pelapor || '...'}</td></tr>
-    </table>
-    <div class="post-table-spacing"></div>
-    <p class="indent">berdasarkan data yang dimiliki desa dan didukung keterangan Ketua RT, serta pengamatan kami bahwa warga yang namanya tersebut di bawah ini benar-benar telah meninggal dunia di Desa ${data.desa || '...................'} dengan identitas:</p>
-    <table class="info">
-      <tr><td>Nama yang Meninggal</td><td>:</td><td>${data.nama_jenazah || '...........................'}</td></tr>
-      <tr><td>Meninggal Di</td><td>:</td><td>${data.tempat_meninggal || '...........................'}</td></tr>
-      <tr><td>Tanggal Meninggal</td><td>:</td><td>${data.tanggal_meninggal || '...........................'}</td></tr>
-      <tr><td>Penyebab Meninggal</td><td>:</td><td>${data.penyebab_meninggal || '...........................'}</td></tr>
-    </table>
-    <div class="post-table-spacing"></div>
-    <p class="indent">Surat ini dibuat untuk keperluan ${data.keperluan_surat || 'administrasi kependudukan'}.</p>
-    <div class="pre-closing-spacing"></div>
-    <p class="indent">Demikian surat keterangan kematian ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
-    <div class="ttd-container">
-      <div class="ttd-box">
-        <div style="height: 0px;"></div>
-        <p>${data.desa ||'.............'}, ${data.tanggal || '..................'}</p>
-        ${data.penandatangan === 'sekretaris_desa' ? `
-          <p style="text-align: center; margin-top: 10px;">An. Kepala Desa ${data.desa || 'Nama Desa'}</p>
-          <p style="font-weight: bold; text-align: center;">Sekertaris Desa</p>
-          <div style="height: 35px;"></div>
-          <p class="u"><strong>${data.nama_sekretaris.toUpperCase() || 'NAMA SEKRETARIS DESA'}</strong></p>
-        ` : `
-          <p style="font-weight: bold;">Kepala Desa ${data.desa || 'Nama Desa'}</p>
-          <div style="height: 35px;"></div>
-          <p class="u"><strong>${data.nama_kepala.toUpperCase() || 'Nama Kepala Desa'}</strong></p>
-        `}
-      </div>
-    </div>
+  </div>
+  
+  <div class="center" style="margin-bottom: 8px;">
+    <h3 class="u" style="margin-bottom: 2px; font-size: 12pt;">SURAT KETERANGAN KEMATIAN</h3>
+    <p class="nomor-surat" style="font-size: 10pt; margin-top: 2px;">Nomor: ${data.nomorSurat || '...........................'}</p>
+  </div>
+  
+  <p class="indent" style="text-align: justify; font-size: 10pt; margin: 5px 0; line-height: 1.2;">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)}, Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>
+  
+  <table style="width: 100%; margin: 5px 0; font-size: 10pt; line-height: 1.2;">
+    <tr><td style="width: 32%; padding: 2px 0;">Nama</td><td style="width: 3%; padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nama_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Jenis Kelamin</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.jk_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Tempat/Tanggal Lahir</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.ttl_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Agama</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.agama_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Status Perkawinan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.status_perkawinan_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Pekerjaan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.pekerjaan_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Nomor NIK KTP</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nik_jenazah || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Alamat</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.alamat_jenazah || '...........................'}</td></tr>
+   </table>
+  
+  <p style="font-size: 10pt; margin: 3px 0; line-height: 1.2;">Nama tersebut di atas benar warga Desa ${data.desa || '……….'} Kecamatan ${data.kecamatan || '……………'} Kabupaten ${data.kota || '…………'}, yang telah meninggal dunia pada :</p>
+  
+  <table style="width: 100%; margin: 5px 0; font-size: 10pt; line-height: 1.2;">
+    <tr><td style="width: 32%; padding: 2px 0;">Hari</td><td style="width: 3%; padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.hari_meninggal || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Tanggal</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.tanggal_meninggal || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Sebab Meninggal</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.sebab_meninggal || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Meninggal di</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.tempat_meninggal || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Umur pada saat meninggal</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.umur_meninggal || '...........................'}</td></tr>
+   </table>
+  
+  <p style="font-size: 10pt; margin: 3px 0; line-height: 1.2;">Surat Keterangan Kematian ini dibuat berdasarkan keterangan Pelapor :</p>
+  
+  <table style="width: 100%; margin: 5px 0; font-size: 10pt; line-height: 1.2;">
+    <tr><td style="width: 32%; padding: 2px 0;">Nama</td><td style="width: 3%; padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nama_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Jenis Kelamin</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.jk_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Tempat/Tanggal Lahir</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.ttl_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Agama</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.agama_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Status Perkawinan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.status_perkawinan_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Pekerjaan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.pekerjaan_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Nomor NIK KTP</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nik_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Alamat</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.alamat_pelapor || '...........................'}</td></tr>
+    <tr><td style="padding: 2px 0;">Hubungan dengan yang bersangkutan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.hubungan_pelapor || '...........................'}</td></tr>
+   </table>
+  
+  <p style="font-size: 10pt; margin: 5px 0; line-height: 1.2; text-align: justify;">Demikian Surat Keterangan Kematian ini dibuat dengan sebenar-benarnya dan dapat dipergunakan sebagaimana mestinya.</p>
+  
+  <div style="margin-top: 15px; text-align: right;">
+    <p style="font-size: 10pt; margin: 2px 0;">${data.desa || '...................'}, ${data.tanggal || '..................'}</p>
+    <p style="font-size: 10pt; margin: 2px 0; font-weight: bold;">Kepala Desa ${data.desa || '...................'}</p>
+    <div style="height: 25px;"></div>
+    <p style="font-size: 10pt; margin: 2px 0; text-decoration: underline; font-weight: bold;">${(data.nama_kepala || '...........................').toUpperCase()}</p>
+  </div>
   `,
  ahli_waris: data => `
   <div class="letterhead">
@@ -5185,20 +5194,33 @@ case 'sttm_a':
   data.keperluan = document.getElementById('keperluan')?.value || '';
   break;
 
-    case 'kematian':
-      data.nama_pelapor = document.getElementById('nama_pelapor')?.value || '';
-      data.umur_pelapor = document.getElementById('umur_pelapor')?.value || '';
-      data.jenis_kelamin_pelapor = document.getElementById('jenis_kelamin_pelapor')?.value || '';
-      data.agama_pelapor = document.getElementById('agama_pelapor')?.value || '';
-      data.pekerjaan_pelapor = document.getElementById('pekerjaan_pelapor')?.value || '';
-      data.dusun_pelapor = document.getElementById('dusun_pelapor')?.value || '';
-      data.rt_pelapor = document.getElementById('rt_pelapor')?.value || '';
-      data.nama_jenazah = document.getElementById('nama_jenazah')?.value || '';
-      data.tempat_meninggal = document.getElementById('tempat_meninggal')?.value || '';
-      data.tanggal_meninggal = document.getElementById('tanggal_meninggal')?.value || '';
-      data.penyebab_meninggal = document.getElementById('penyebab_meninggal')?.value || '';
-      data.keperluan_surat = document.getElementById('keperluan_surat')?.value || '';
-      break;
+   case 'kematian':
+  // Data Almarhum
+  data.nama_jenazah = document.getElementById('nama_jenazah')?.value || '';
+  data.jk_jenazah = document.getElementById('jk_jenazah')?.value || '';
+  data.ttl_jenazah = document.getElementById('ttl_jenazah')?.value || '';
+  data.agama_jenazah = document.getElementById('agama_jenazah')?.value || '';
+  data.status_perkawinan_jenazah = document.getElementById('status_perkawinan_jenazah')?.value || '';
+  data.pekerjaan_jenazah = document.getElementById('pekerjaan_jenazah')?.value || '';
+  data.nik_jenazah = document.getElementById('nik_jenazah')?.value || '';
+  data.alamat_jenazah = document.getElementById('alamat_jenazah')?.value || '';
+  // Data Meninggal
+  data.hari_meninggal = document.getElementById('hari_meninggal')?.value || '';
+  data.tanggal_meninggal = document.getElementById('tanggal_meninggal')?.value || '';
+  data.sebab_meninggal = document.getElementById('sebab_meninggal')?.value || '';
+  data.tempat_meninggal = document.getElementById('tempat_meninggal')?.value || '';
+  data.umur_meninggal = document.getElementById('umur_meninggal')?.value || '';
+  // Data Pelapor
+  data.nama_pelapor = document.getElementById('nama_pelapor')?.value || '';
+  data.jk_pelapor = document.getElementById('jk_pelapor')?.value || '';
+  data.ttl_pelapor = document.getElementById('ttl_pelapor')?.value || '';
+  data.agama_pelapor = document.getElementById('agama_pelapor')?.value || '';
+  data.status_perkawinan_pelapor = document.getElementById('status_perkawinan_pelapor')?.value || '';
+  data.pekerjaan_pelapor = document.getElementById('pekerjaan_pelapor')?.value || '';
+  data.nik_pelapor = document.getElementById('nik_pelapor')?.value || '';
+  data.alamat_pelapor = document.getElementById('alamat_pelapor')?.value || '';
+  data.hubungan_pelapor = document.getElementById('hubungan_pelapor')?.value || '';
+  break;
 
     // Di dalam fungsi getAllData, pada case 'ahli_waris':
 case 'ahli_waris':
