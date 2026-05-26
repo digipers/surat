@@ -3580,69 +3580,147 @@ domisili: data => `
     </div>
   `,
 kematian: data => `
-  <div class="letterhead" style="margin-bottom: 10px;">
-    <div class="logo-placeholder" style="width: 50px; height: 60px; margin-right: 12px;">
+  <div class="letterhead" style="margin-bottom: 10px; padding-bottom: 2px;">
+    <div class="logo-placeholder" style="width: 50px; height: 60px; margin-right: 10px;">
       ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
     </div>
     <div class="letterhead-text">
-      <p style="font-size: 10pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
-      <p style="font-size: 11pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
-      <p style="font-size: 12pt; margin: 0; font-weight: bold;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
-      <p style="font-size: 6pt; margin-top: 2px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
+      <p style="font-size: 10pt; margin: 0; line-height: 1.2;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
+      <p style="font-size: 11pt; margin: 0; line-height: 1.2;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
+      <p style="font-size: 12pt; margin: 0; line-height: 1.2; font-weight: bold;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
+      <p style="font-size: 8pt; margin-top: 2px; line-height: 1;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'}</p>
     </div>
   </div>
-  
-  <div class="center" style="margin-bottom: 8px;">
-    <h3 class="u" style="margin-bottom: 2px; font-size: 12pt;">SURAT KETERANGAN KEMATIAN</h3>
-    <p class="nomor-surat" style="font-size: 10pt; margin-top: 2px;">Nomor: ${data.nomorSurat || '...........................'}</p>
+
+  <div class="center" style="margin-bottom: 5px;">
+    <h3 class="u" style="margin-bottom: 0; margin-top: 0; font-size: 12pt; line-height: 1.2;">SURAT KETERANGAN KEMATIAN</h3>
+    <p class="nomor-surat" style="font-size: 11pt; text-align: center; margin: 2px 0; line-height: 1.2;">Nomor: ${data.nomorSurat || '...........................'}</p>
   </div>
-  
-  <p class="indent" style="text-align: justify; font-size: 10pt; margin: 5px 0; line-height: 1.2;">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)}, Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>
-  
-  <table style="width: 100%; margin: 5px 0; font-size: 10pt; line-height: 1.2;">
-    <tr><td style="width: 32%; padding: 2px 0;">Nama</td><td style="width: 3%; padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nama_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Jenis Kelamin</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.jk_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Tempat/Tanggal Lahir</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.ttl_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Agama</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.agama_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Status Perkawinan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.status_perkawinan_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Pekerjaan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.pekerjaan_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Nomor NIK KTP</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nik_jenazah || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Alamat</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.alamat_jenazah || '...........................'}</td></tr>
-   </table>
-  
-  <p style="font-size: 10pt; margin: 3px 0; line-height: 1.2;">Nama tersebut di atas benar warga Desa ${data.desa || '……….'} Kecamatan ${data.kecamatan || '……………'} Kabupaten ${data.kota || '…………'}, yang telah meninggal dunia pada :</p>
-  
-  <table style="width: 100%; margin: 5px 0; font-size: 10pt; line-height: 1.2;">
-    <tr><td style="width: 32%; padding: 2px 0;">Hari</td><td style="width: 3%; padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.hari_meninggal || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Tanggal</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.tanggal_meninggal || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Sebab Meninggal</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.sebab_meninggal || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Meninggal di</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.tempat_meninggal || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Umur pada saat meninggal</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.umur_meninggal || '...........................'}</td></tr>
-   </table>
-  
-  <p style="font-size: 10pt; margin: 3px 0; line-height: 1.2;">Surat Keterangan Kematian ini dibuat berdasarkan keterangan Pelapor :</p>
-  
-  <table style="width: 100%; margin: 5px 0; font-size: 10pt; line-height: 1.2;">
-    <tr><td style="width: 32%; padding: 2px 0;">Nama</td><td style="width: 3%; padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nama_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Jenis Kelamin</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.jk_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Tempat/Tanggal Lahir</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.ttl_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Agama</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.agama_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Status Perkawinan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.status_perkawinan_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Pekerjaan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.pekerjaan_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Nomor NIK KTP</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.nik_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Alamat</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.alamat_pelapor || '...........................'}</td></tr>
-    <tr><td style="padding: 2px 0;">Hubungan dengan yang bersangkutan</td><td style="padding: 2px 0;">:</td><td style="padding: 2px 0;">${data.hubungan_pelapor || '...........................'}</td></tr>
-   </table>
-  
-  <p style="font-size: 10pt; margin: 5px 0; line-height: 1.2; text-align: justify;">Demikian Surat Keterangan Kematian ini dibuat dengan sebenar-benarnya dan dapat dipergunakan sebagaimana mestinya.</p>
-  
+
+  <p style="text-align: justify; font-size: 12pt; margin: 8px 0; line-height: 1.3;">Yang bertanda tangan di bawah ini, Kepala Desa ${(data.desa || '...................').charAt(0).toUpperCase() + (data.desa || '...................').slice(1)}, Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + (data.kecamatan || '...................').slice(1)}, Kabupaten ${(data.kota || '...................').charAt(0).toUpperCase() + (data.kota || '...................').slice(1)}, dengan ini menerangkan bahwa:</p>
+
+  <!-- DATA ALMARHUM -->
+  <div style="margin-left: 25px;">
+    <table style="width: calc(100% - 25px); margin: 3px 0; font-size: 12pt; line-height: 1.3; border-collapse: collapse;">
+      <tr><td style="width: 160px; padding: 2px 0;">Nama</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.nama_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Jenis Kelamin</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.jk_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Tempat/Tanggal Lahir</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.ttl_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Agama</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.agama_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Status Perkawinan</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.status_perkawinan_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Pekerjaan</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.pekerjaan_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Nomor NIK KTP</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.nik_jenazah || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0; vertical-align: top;">Alamat</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center; vertical-align: top;">:</td>
+        <td style="padding: 2px 0;">${data.alamat_jenazah || '...........................'}</td>
+      </tr>
+    </table>
+  </div>
+
+  <p style="margin: 5px 0; text-align: left; font-size: 12pt; line-height: 1.3;">Nama tersebut di atas benar warga Desa ${data.desa || '……….'} Kecamatan ${data.kecamatan || '……………'} Kabupaten ${data.kota || '…………'}, yang telah meninggal dunia pada :</p>
+
+  <!-- DATA MENINGGAL -->
+  <div style="margin-left: 25px;">
+    <table style="width: calc(100% - 25px); margin: 3px 0; font-size: 12pt; line-height: 1.3; border-collapse: collapse;">
+      <tr><td style="width: 160px; padding: 2px 0;">Hari</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.hari_meninggal || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Tanggal</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.tanggal_meninggal || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Sebab Meninggal</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.sebab_meninggal || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Meninggal di</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.tempat_meninggal || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 160px; padding: 2px 0;">Umur pada saat meninggal</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.umur_meninggal || '...........................'}</td>
+      </tr>
+    </table>
+  </div>
+
+  <p style="margin: 5px 0; text-align: left; font-size: 12pt; line-height: 1.3;">Surat Keterangan Kematian ini dibuat berdasarkan keterangan Pelapor :</p>
+
+  <!-- DATA PELAPOR -->
+  <div style="margin-left: 25px;">
+    <table style="width: calc(100% - 25px); margin: 3px 0; font-size: 12pt; line-height: 1.3; border-collapse: collapse;">
+      <tr><td style="width: 180px; padding: 2px 0;">Nama</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.nama_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Jenis Kelamin</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.jk_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Tempat/Tanggal Lahir</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.ttl_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Agama</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.agama_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Status Perkawinan</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.status_perkawinan_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Pekerjaan</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.pekerjaan_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Nomor NIK KTP</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.nik_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0; vertical-align: top;">Alamat</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center; vertical-align: top;">:</td>
+        <td style="padding: 2px 0;">${data.alamat_pelapor || '...........................'}</td>
+      </tr>
+      <tr><td style="width: 180px; padding: 2px 0;">Hubungan dengan yang bersangkutan</td>
+        <td style="width: 10px; padding: 2px 0; text-align: center;">:</td>
+        <td style="padding: 2px 0;">${data.hubungan_pelapor || '...........................'}</td>
+      </tr>
+    </table>
+  </div>
+
+  <p style="text-align: justify; font-size: 12pt; margin: 8px 0; line-height: 1.3;">Demikian Surat Keterangan Kematian ini dibuat dengan sebenar-benarnya dan dapat dipergunakan sebagaimana mestinya.</p>
+
+  <!-- TANDA TANGAN -->
   <div style="margin-top: 15px; text-align: right;">
-    <p style="font-size: 10pt; margin: 2px 0;">${data.desa || '...................'}, ${data.tanggal || '..................'}</p>
-    <p style="font-size: 10pt; margin: 2px 0; font-weight: bold;">Kepala Desa ${data.desa || '...................'}</p>
-    <div style="height: 25px;"></div>
-    <p style="font-size: 10pt; margin: 2px 0; text-decoration: underline; font-weight: bold;">${(data.nama_kepala || '...........................').toUpperCase()}</p>
+    <div style="display: inline-block; text-align: center;">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.3;">${data.desa || '...................'}, ${data.tanggal || '..................'}</p>
+      <p style="font-size: 12pt; margin: 2px 0; line-height: 1.3; font-weight: bold;">Kepala Desa ${data.desa || '...................'}</p>
+      <div style="height: 50px;"></div>
+      <p style="font-size: 12pt; margin: 0; line-height: 1.3; text-decoration: underline; font-weight: bold;">${(data.nama_kepala || '...........................').toUpperCase()}</p>
+    </div>
   </div>
-  `,
+`,
  ahli_waris: data => `
   <div class="letterhead">
     <div class="logo-placeholder">
