@@ -598,9 +598,10 @@
         <option value="pindah_agama">23. Surat Keterangan Pindah Agama</option>
         <option value="pindah_masuk_keluar">24. Surat Keterangan Pindah Masuk/Keluar (474)</option>
 		<option value="hibah">25. Surat Keterangan Hibah</option>
-		<option value="izin_orang_tua">26. Surat Keterangan Izin Orang Tua</option>
+		<option value="izin_orang_tua">26. Suket Izin Ortu/suami/istri </option>
 		<option value="bersih_diri">27. Surat Keterangan Bersih Diri (SKCK Desa)</option>
 		<option value="kehilangan">28. Surat Keterangan Kehilangan</option>
+		<option value="belum_menikah_lengkap">29. Surat Keterangan Belum Menikah</option>
     </select>
   </div>
 
@@ -2947,39 +2948,40 @@ const formTemplates = {
     </div>
   </fieldset>
 `,
-  izin_orang_tua: `
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Pemberi Izin (Orang Tua/Wali)</legend>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;"><div class="form-group"><label>Nama *</label><input id="nama_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div></div>
-        <div class="col" style="flex:1;"><div class="form-group"><label>NIK *</label><input id="nik_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">NIK harus diisi.</span></div></div>
-      </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;"><div class="form-group"><label>Jenis Kelamin *</label><select id="jk_pemberi" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select><span class="error-message">Harus diisi.</span></div></div>
-        <div class="col" style="flex:1;"><div class="form-group"><label>Tempat/Tgl Lahir *</label><input id="ttl_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">Harus diisi.</span></div></div>
-      </div>
-      <div class="form-group"><label>Alamat Lengkap *</label><input id="alamat_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">Alamat harus diisi.</span></div>
-      <div class="form-group"><label>Hubungan dengan Penerima Izin *</label><input id="hubungan_pemberi" type="text" placeholder="Contoh: Ayah Kandung" oninput="debounceUpdate()" required><span class="error-message">Hubungan harus diisi.</span></div>
-    </fieldset>
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Penerima Izin (Anak/Yang Diizinkan)</legend>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;"><div class="form-group"><label>Nama *</label><input id="nama_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div></div>
-        <div class="col" style="flex:1;"><div class="form-group"><label>NIK *</label><input id="nik_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">NIK harus diisi.</span></div></div>
-      </div>
-      <div class="row" style="display:flex; gap:16px;">
-        <div class="col" style="flex:1;"><div class="form-group"><label>Jenis Kelamin *</label><select id="jk_penerima" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select><span class="error-message">Harus diisi.</span></div></div>
-        <div class="col" style="flex:1;"><div class="form-group"><label>Tempat/Tgl Lahir *</label><input id="ttl_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">Harus diisi.</span></div></div>
-      </div>
-      <div class="form-group"><label>Alamat Lengkap *</label><input id="alamat_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">Alamat harus diisi.</span></div>
-      <div class="form-group"><label>Hubungan dengan Pemberi Izin *</label><input id="hubungan_penerima" type="text" placeholder="Contoh: Anak Kandung" oninput="debounceUpdate()" required><span class="error-message">Hubungan harus diisi.</span></div>
-    </fieldset>
-    <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
-      <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Keperluan Izin</legend>
-      <div class="form-group"><label>Pekerjaan / Tujuan *</label><input id="pekerjaan_tujuan" type="text" placeholder="Contoh: Bekerja sebagai TKI" oninput="debounceUpdate()" required><span class="error-message">Harus diisi.</span></div>
-      <div class="form-group"><label>Negara Tujuan</label><input id="negara_tujuan" type="text" oninput="debounceUpdate()"></div>
-    </fieldset>
- `,
+ izin_orang_tua: `
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Pemberi Izin (Orang Tua/Wali)</legend>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Nama *</label><input id="nama_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>NIK *</label><input id="nik_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">NIK harus diisi.</span></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Jenis Kelamin *</label><select id="jk_pemberi" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select><span class="error-message">Harus diisi.</span></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Tempat/Tgl Lahir *</label><input id="ttl_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">Harus diisi.</span></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Lengkap *</label><input id="alamat_pemberi" type="text" oninput="debounceUpdate()" required><span class="error-message">Alamat harus diisi.</span></div>
+    <div class="form-group"><label>Hubungan dengan Penerima Izin *</label><input id="hubungan_pemberi" type="text" placeholder="Contoh: Ayah Kandung" oninput="debounceUpdate()" required><span class="error-message">Hubungan harus diisi.</span></div>
+  </fieldset>
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Penerima Izin (Anak/Yang Diizinkan)</legend>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Nama *</label><input id="nama_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama harus diisi.</span></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>NIK *</label><input id="nik_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">NIK harus diisi.</span></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Jenis Kelamin *</label><select id="jk_penerima" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select><span class="error-message">Harus diisi.</span></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Tempat/Tgl Lahir *</label><input id="ttl_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">Harus diisi.</span></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Lengkap *</label><input id="alamat_penerima" type="text" oninput="debounceUpdate()" required><span class="error-message">Alamat harus diisi.</span></div>
+    <div class="form-group"><label>Hubungan dengan Pemberi Izin *</label><input id="hubungan_penerima" type="text" placeholder="Contoh: Anak Kandung" oninput="debounceUpdate()" required><span class="error-message">Hubungan harus diisi.</span></div>
+  </fieldset>
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Keperluan Izin</legend>
+    
+    <div class="form-group"><label>Negara Tujuan</label><input id="negara_tujuan" type="text" oninput="debounceUpdate()"></div>
+    <div class="form-group"><label>Nama Perusahaan (P3MI) *</label><input id="nama_perusahaan" type="text" oninput="debounceUpdate()" required><span class="error-message">Nama perusahaan harus diisi.</span></div>
+  </fieldset>
+`,
  bersih_diri: `
   <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
     <legend style="font-weight:600; padding:0 10px; color:var(--primary);">I. DATA BAPAK KANDUNG (Ayah)</legend>
@@ -3184,6 +3186,58 @@ kehilangan: `
       <textarea id="keperluan" rows="2" placeholder="Contoh: Untuk mengurus penggantian dokumen yang hilang" oninput="debounceUpdate()" required></textarea>
       <span class="error-message">Keperluan harus diisi.</span>
     </div>
+  </fieldset>
+`,
+belum_menikah_lengkap: `
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Pemohon</legend>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Nama Lengkap *</label><input id="nama" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>NIK *</label><input id="nik" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Jenis Kelamin *</label><select id="jk" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Tempat / Tanggal Lahir *</label><input id="ttl" type="text" placeholder="Contoh: Teluk Dalem, 10 Mei 1990" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Pekerjaan *</label><input id="pekerjaan" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Agama *</label><select id="agama" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option><option value="Konghucu">Konghucu</option></select></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Lengkap *</label><textarea id="alamat" rows="2" placeholder="Dusun, RT, RW, Desa, Kecamatan, Kabupaten" oninput="debounceUpdate()" required></textarea></div>
+  </fieldset>
+
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Ayah Kandung</legend>
+    <div class="form-group"><label>Nama Ayah *</label><input id="nama_ayah" type="text" oninput="debounceUpdate()" required></div>
+    <div class="form-group"><label>NIK Ayah *</label><input id="nik_ayah" type="text" oninput="debounceUpdate()" required></div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Tempat/Tanggal Lahir Ayah *</label><input id="ttl_ayah" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Agama Ayah *</label><select id="agama_ayah" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option></select></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Pekerjaan Ayah *</label><input id="pekerjaan_ayah" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Ayah *</label><textarea id="alamat_ayah" rows="2" placeholder="Dusun, RT, RW, Desa, Kecamatan, Kabupaten" oninput="debounceUpdate()" required></textarea></div>
+  </fieldset>
+
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Data Ibu Kandung</legend>
+    <div class="form-group"><label>Nama Ibu *</label><input id="nama_ibu" type="text" oninput="debounceUpdate()" required></div>
+    <div class="form-group"><label>NIK Ibu *</label><input id="nik_ibu" type="text" oninput="debounceUpdate()" required></div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Tempat/Tanggal Lahir Ibu *</label><input id="ttl_ibu" type="text" oninput="debounceUpdate()" required></div></div>
+      <div class="col" style="flex:1;"><div class="form-group"><label>Agama Ibu *</label><select id="agama_ibu" oninput="debounceUpdate()" required><option value="">-- Pilih --</option><option value="Islam">Islam</option><option value="Kristen">Kristen</option><option value="Katolik">Katolik</option><option value="Hindu">Hindu</option><option value="Buddha">Buddha</option></select></div></div>
+    </div>
+    <div class="row" style="display:flex; gap:16px;">
+      <div class="col" style="flex:1;"><div class="form-group"><label>Pekerjaan Ibu *</label><input id="pekerjaan_ibu" type="text" oninput="debounceUpdate()" required></div></div>
+    </div>
+    <div class="form-group"><label>Alamat Ibu *</label><textarea id="alamat_ibu" rows="2" placeholder="Dusun, RT, RW, Desa, Kecamatan, Kabupaten" oninput="debounceUpdate()" required></textarea></div>
+  </fieldset>
+
+  <fieldset style="border:1px solid var(--border); padding:15px; border-radius:8px; margin-bottom:20px;">
+    <legend style="font-weight:600; padding:0 10px; color:var(--primary);">Keterangan Tambahan</legend>
+    <div class="form-group"><label>Nomor RT (dari keterangan RT)</label><input id="rt_ket" type="text" placeholder="Contoh: 03" oninput="debounceUpdate()"></div>
+    <div class="form-group"><label>Keperluan Surat (opsional)</label><textarea id="keperluan" rows="2" placeholder="Misal: Persyaratan pernikahan" oninput="debounceUpdate()"></textarea></div>
   </fieldset>
 `
 };
@@ -3861,7 +3915,7 @@ kematian: data => `
     <tr><td style="padding:4px 0;">Alamat</td><td style="padding:4px 0;">:</td><td style="padding:4px 0;">${data.anak_alamat || '...........................'}</td></tr>
   </table>
 
-  <p>Demikian surat keterangan ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
+  <p>Demikian surat keterangan keterangan kenal lahir ini dibuat untuk dipergunakan sebagaimana mestinya.</p>
   
   <div class="ttd-container">
     <div class="ttd-box">
@@ -4018,7 +4072,7 @@ Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + 
 </table>
 <div class="post-table-spacing"></div>
 <p class="indent">Berdasarkan data kependudukan Desa ${data.desa || '...................'},
-serta didukung surat keterangan dari Ketua RT ${data.rt || '...'} warga tersebut benar warga desa kami, dalam hal dokumen kependudukan terdapat perbedaan data antara KTP diatas dengan identitas dokumen ${data.jenis_identitas || '...........................'} tertulis dibawah ini:</p>
+serta didukung surat keterangan dari Ketua RT ${data.rt || '...'} warga tersebut benar warga desa kami, dalam hal dokumen kependudukan terdapat perbedaan data antara KTP/KK diatas dengan identitas dokumen ${data.jenis_identitas || '...........................'} tertulis dibawah ini:</p>
 <table class="info">
 <tr><td>Nama</td><td>:</td><td>${data.data_identitas_nama || '...........................'}</td></tr>
 <tr><td>NIK</td><td>:</td><td>${data.data_identitas_nik || '...........................'}</td></tr>
@@ -4027,7 +4081,7 @@ serta didukung surat keterangan dari Ketua RT ${data.rt || '...'} warga tersebut
 <tr><td>Alamat</td><td>:</td><td>${data.data_identitas_alamat || '...........................'}</td></tr>
 </table>
 <div class="post-table-spacing"></div>
-<p class="indent">namun setelah dilakukan pengecekan, seluruh identitas tersebut adalah orang yang sama, Adapun keperluan pembuatan surat ini sebagai: ${data.alasan_perbedaan || '...........................'}</p>
+<p class="indent">namun setelah dilakukan pengecekan, seluruh identitas tersebut adalah ORANG YANG SAMA, Adapun keperluan pembuatan surat ini sebagai: ${data.alasan_perbedaan || '...........................'}</p>
 <div class="pre-closing-spacing"></div>
 <p class="indent">Demikian surat keterangan beda indetitas ini dibuat untuk keperluan perbaikan data identitas.</p>
 <div class="ttd-container">
@@ -4084,7 +4138,7 @@ Kecamatan ${(data.kecamatan || '...................').charAt(0).toUpperCase() + 
 <div class="post-table-spacing"></div>
 <p class="indent">Alasan perubahan data tersebut adalah: ${data.alasan_perubahan || '...........................'}</p>
 <div class="pre-closing-spacing"></div>
-<p class="indent">Demikian surat perubahan data ini dibuat untuk keperluan administrasi kependudukan.</p>
+<p class="indent">Demikian surat perubahan data ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
 <div class="ttd-container">
 <div class="ttd-box">
 <div style="height: 0px;"></div>
@@ -4811,84 +4865,120 @@ pindah_masuk_keluar: data => `
     <p>4. ${data.saksi4 || '............................'}</p>
   </div>
 `,
-    izin_orang_tua: data => `
-    <div class="letterhead">
-      <div class="logo-placeholder">
-        ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
+izin_orang_tua: data => `
+  <div class="letterhead">
+    <div class="logo-placeholder">
+      ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
+    </div>
+    <div class="letterhead-text">
+      <p style="font-size: 11pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
+      <p style="font-size: 12pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
+      <p style="font-size: 13pt; margin: 0;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
+      <p style="font-size: 7pt; margin-top: 3px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
+    </div>
+  </div>
+  <div class="center" style="margin-bottom: 8px;">
+    <h3 class="u" style="margin: 3px 0; font-size: 13pt;">SURAT KETERANGAN IZIN ORANG TUA / SUAMI / ISTRI</h3>
+    <p class="nomor-surat" style="font-size: 10pt; text-align: center; margin: 0;">Nomor: ${data.nomorSurat || '...........................'}</p>
+  </div>
+  
+  <p style="margin: 2px 0; line-height: 1.2; text-align: left; text-indent: 0;">Yang bertanda tangan di bawah ini :</p>
+  
+  <!-- TABEL DATA PEMBERI IZIN (Orang Tua) dengan titik dua rapi -->
+  <table style="margin-left: 50px; width: auto; border-collapse: collapse; font-family: 'Times New Roman', Times, serif; font-size: 12pt;">
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Nama</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.nama_pemberi || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">NIK</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.nik_pemberi || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Jenis Kelamin</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.jk_pemberi || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Tempat/Tgl Lahir</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.ttl_pemberi || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Alamat</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.alamat_pemberi || '...........................'}</td>
+    </tr>
+    
+  </table>
+
+   <p style="margin: 2px 0; line-height: 1.2; text-align: left; text-indent: 0;">Saya selaku <strong>${data.hubungan_pemberi || '.............'}</strong> dengan ini memberikan izin kepada ${data.hubungan_penerima || '...........................'} kami</p>
+  
+  <!-- TABEL DATA PENERIMA IZIN (Anak) dengan titik dua rapi -->
+  <table style="margin-left: 50px; width: auto; border-collapse: collapse; font-family: 'Times New Roman', Times, serif; font-size: 12pt;">
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Nama</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.nama_penerima || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">NIK</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.nik_penerima || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Jenis Kelamin</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.jk_penerima || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Tempat/Tgl Lahir</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.ttl_penerima || '...........................'}</td>
+    </tr>
+    <tr>
+      <td style="width: 170px; padding: 4px 0;">Alamat</td>
+      <td style="width: 15px; padding: 4px 0; text-align: center;">:</td>
+      <td style="padding: 4px 0;">${data.alamat_penerima || '...........................'}</td>
+    </tr>
+   
+  </table>
+
+  <br>
+  <p style="margin: 2px 0; line-height: 1.2; text-align: justify; text-indent: 30px;">
+  untuk bekerja ke luar negeri sebagai Pekerja Migran Indonesia dengan negara tujuan penempatan di 
+  <strong>${data.negara_tujuan || '___________'}</strong> melalui Perusahaan Penempatan Pekerja Migran Indonesia (P3MI) 
+  <strong>${data.nama_perusahaan || '___________'}</strong> sesuai dengan kontrak yang ditandatangani oleh yang bersangkutan.
+</p>
+  <br>
+  <p class="indent" style="margin: 2px 0; line-height: 1.2;">Demikian surat keterangan izin ${data.hubungan_pemberi || '.............'} ini dibuat dengan sebenar-benarnya tanpa paksaan dan dapat dipertanggungjawabkan.</p>
+  
+  <div style="margin-top: 20px;">
+    <div style="display: flex; justify-content: space-between;">
+      <div style="text-align: center; width: 45%;">
+        <p style="margin: 2px 0;">&nbsp;</p>
+        <p style="margin: 2px 0;">Yang diberi Izin</p>
+        <br><br><br>
+        <p style="margin: 2px 0;"><strong>(${data.nama_penerima || '...........................'})</strong></p>
       </div>
-      <div class="letterhead-text">
-        <p style="font-size: 11pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
-        <p style="font-size: 12pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
-        <p style="font-size: 13pt; margin: 0;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
-        <p style="font-size: 7pt; margin-top: 3px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
+      <div style="text-align: center; width: 45%;">
+        <p style="margin: 2px 0;">${data.desa || '.............'}, ${data.tanggal || '..................'}</p>
+        <p style="margin: 2px 0;">Yang Memberi Izin</p>
+        <p style="margin: 2px 0;">Orang Tua</p>
+        <br><br>
+        <p style="margin: 2px 0;"><strong>(${data.nama_pemberi || '...........................'})</strong></p>
       </div>
     </div>
-    <div class="center" style="margin-bottom: 8px;">
-      <h3 class="u" style="margin: 3px 0; font-size: 13pt;">SURAT KETERANGAN IZIN BEKERJA</h3>
-      <p class="nomor-surat" style="font-size: 10pt; text-align: center; margin: 0;">Nomor: ${data.nomorSurat || '...........................'}</p>
+    <div style="text-align: center; margin-top: 25px;">
+      <p style="margin: 2px 0;">Mengetahui,</p>
+      <p style="margin: 2px 0;"><strong>Kepala Desa ${data.desa || 'Teluk Dalem'}</strong></p>
+      <br><br><br>
+      <p style="margin: 2px 0;"><strong>(${data.nama_kepala || '...........................'})</strong></p>
     </div>
-    
-    <p class="indent" style="margin: 3px 0; line-height: 1.2;">Yang bertanda tangan di bawah ini :</p>
-    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 3px; line-height: 1.2;">
-      <tr><td style="width: 35%; padding: 2px 8px;">Nama</td><td style="width: 5%; padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nama_pemberi || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">NIK</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nik_pemberi || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Jenis Kelamin</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.jk_pemberi || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Tempat/Tgl Lahir</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.ttl_pemberi || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Alamat</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.alamat_pemberi || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Hubungan</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.hubungan_pemberi || '...........................'}</td></tr>
-    </table>
-    <p class="indent" style="margin: 2px 0; line-height: 1.2;">Saya selaku <strong>${data.hubungan_pemberi || '.............'}</strong> dengan ini memberikan izin kepada :</p>
- 
-    
-	<table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 3px; line-height: 1.2;">
-      <tr><td style="width: 35%; padding: 2px 8px;">Nama</td><td style="width: 5%; padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nama_penerima || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">NIK</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.nik_penerima || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Jenis Kelamin</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.jk_penerima || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Tempat/Tgl Lahir</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.ttl_penerima || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Alamat</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.alamat_penerima || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Hubungan</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.hubungan_penerima || '...........................'}</td></tr>
-    </table>
-    <br>
-       <p class="indent" style="margin: 2px 0; line-height: 1.2;">untuk bekerja di Luar Negeri :</p>
-    <table class="info" style="margin-left: 50px; margin-top: 0; margin-bottom: 3px; line-height: 1.2;">
-      <tr><td style="width: 35%; padding: 2px 8px;">Pekerjaan</td><td style="width: 5%; padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.pekerjaan_tujuan || '...........................'}</td></tr>
-      <tr><td style="padding: 2px 8px;">Negara Tujuan</td><td style="padding: 2px 8px;">:</td><td style="padding: 2px 8px;">${data.negara_tujuan || '...........................'}</td></tr>
-    </table>
-      <br>
-    <p class="indent" style="margin: 2px 0; line-height: 1.2;">dan akan memberikan dukungan sepenuhnya serta tanggung jawab apabila terjadi hal yang melanggar hukum yang dapat merugikan Perusahaan.</p>
-     <br>
-	<p class="indent" style="margin: 2px 0; line-height: 1.2;">Demikian surat keterangan izin orang tua ini dibuat dengan sebenar-benarnya tanpa paksaan dan dapat dipertanggungjawabkan.</p>
-    
-    <!-- Tanda Tangan: Tempat/Tanggal di atas Kanan, sejajar dengan Yang Memberi Izin -->
-    <div style="margin-top: 20px;">
-        <div style="display: flex; justify-content: space-between;">
-            <!-- KIRI: Yang diberi Izin -->
-            <div style="text-align: center; width: 45%;">
-                <p style="margin: 2px 0;">&nbsp;</p>
-                <p style="margin: 2px 0;">Yang diberi Izin</p>
-                <br><br><br>
-                <p style="margin: 2px 0;"><strong>(${data.nama_penerima || '...........................'})</strong></p>
-            </div>
-            
-            <!-- KANAN: Tempat/Tanggal (di atas) + Yang Memberi Izin -->
-            <div style="text-align: center; width: 45%;">
-                <p style="margin: 2px 0;">${data.desa || '.............'}, ${data.tanggal || '..................'}</p>
-                <p style="margin: 2px 0;">Yang Memberi Izin</p>
-                <p style="margin: 2px 0;">Orang Tua</p>
-                <br><br>
-                <p style="margin: 2px 0;"><strong>(${data.nama_pemberi || '...........................'})</strong></p>
-            </div>
-        </div>
-        
-        <!-- Mengetahui, Kepala Desa (Tengah) -->
-        <div style="text-align: center; margin-top: 25px;">
-            <p style="margin: 2px 0;">Mengetahui,</p>
-            <p style="margin: 2px 0;"><strong>Kepala Desa ${data.desa || 'Teluk Dalem'}</strong></p>
-            <br><br><br>
-            <p style="margin: 2px 0;"><strong>(${data.nama_kepala || '...........................'})</strong></p>
-        </div>
-    </div>
-  `,
+  </div>
+`,
 <!-- GANTI TEMPLATE SURAT BERSIH DIRI -->
 <!-- Cari bagian 'bersih_diri: data => { ... }' di dalam objek 'templates', lalu ganti dengan kode di bawah ini -->
 
@@ -5070,8 +5160,78 @@ kehilangan: data => `
       </div>
     </div>
   </div>
+`,
+belum_menikah_lengkap: data => `
+  <div class="letterhead">
+    <div class="logo-placeholder">
+      ${logoDataUrl ? `<img src="${logoDataUrl}" alt="Logo">` : '<i class="fas fa-landmark"></i>'}
+    </div>
+    <div class="letterhead-text">
+      <p style="font-size: 12pt; margin: 0;">PEMERINTAH KABUPATEN ${(data.kota || 'KABUPATEN').toUpperCase()}</p>
+      <p style="font-size: 13pt; margin: 0;">KECAMATAN ${(data.kecamatan || 'KECAMATAN').toUpperCase()}</p>
+      <p style="font-size: 14pt; margin: 0;">DESA ${(data.desa || 'DESA').toUpperCase()}</p>
+      <p style="font-size: 8pt; margin-top: 5px;">Jl. Raya Lintas Timur No. 03, ${data.desa || 'Desa'} - ${data.kecamatan || 'Kecamatan'}, ${data.kota || 'Kabupaten'}</p>
+    </div>
+  </div>
+
+  <div class="center" style="margin-bottom: 12px;">
+    <h3 class="u" style="margin: 0; font-size: 14pt;">SURAT KETERANGAN BELUM MENIKAH</h3>
+    <p class="nomor-surat" style="font-size: 11pt; margin: 2px 0;">Nomor : ${data.nomorSurat || '...........................'}</p>
+  </div>
+
+  <p style="text-align: justify; text-indent: 30px; margin: 5px 0;">Yang bertanda tangan di bawah ini Kepala Desa ${data.desa || '____________'} Kecamatan ${data.kecamatan || '____________'} Kabupaten ${data.kota || '____________'}, menerangkan dengan sesungguhnya bahwa :</p>
+
+  <!-- TABEL DATA PEMOHON -->
+  <table style="margin-left: 40px; width: auto; border-collapse: collapse; font-size: 12pt; font-family: 'Times New Roman', Times, serif;">
+    <tr><td style="width: 170px; padding: 3px 0;">N a m a</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.nama || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 3px 0;">NIK</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.nik || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 3px 0;">Jenis Kelamin</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.jk || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 3px 0;">Tempat, tanggal lahir</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.ttl || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 3px 0;">Pekerjaan</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.pekerjaan || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 3px 0;">A g a m a</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.agama || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 3px 0;">Alamat</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 3px 0;">${data.alamat || '...........................'}</td></tr>
+  </table>
+
+  <p style="margin: 8px 0 5px 0;"><strong>Adalah putra / putri dari :</strong></p>
+
+  <p style="margin: 3px 0 0 20px;"><strong>Ayah :</strong></p>
+  <table style="margin-left: 60px; width: auto; border-collapse: collapse; font-size: 12pt; font-family: 'Times New Roman', Times, serif;">
+    <tr><td style="width: 170px; padding: 2px 0;">N a m a</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.nama_ayah || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">NIK</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.nik_ayah || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">Tempat, tanggal lahir</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.ttl_ayah || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">A g a m a</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.agama_ayah || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">Pekerjaan</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.pekerjaan_ayah || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">Alamat</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.alamat_ayah || '...........................'}</td></tr>
+  </table>
+
+  <p style="margin: 8px 0 0 20px;"><strong>Ibu :</strong></p>
+  <table style="margin-left: 60px; width: auto; border-collapse: collapse; font-size: 12pt; font-family: 'Times New Roman', Times, serif;">
+    <tr><td style="width: 170px; padding: 2px 0;">N a m a</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.nama_ibu || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">NIK</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.nik_ibu || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">Tempat, tanggal lahir</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.ttl_ibu || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">A g a m a</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.agama_ibu || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">Pekerjaan</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.pekerjaan_ibu || '...........................'}</td></tr>
+    <tr><td style="width: 170px; padding: 2px 0;">Alamat</td><td style="width: 15px; text-align: center;">:</td><td style="padding: 2px 0;">${data.alamat_ibu || '...........................'}</td></tr>
+  </table>
+
+  <p style="text-align: justify; text-indent: 30px; margin-top: 10px;">
+    Berdasarkan data kependudukan desa kami, serta keterangan Ketua RT ${data.rt_ket || '___'}, nama tersebut di atas belum terikat hubungan pernikahan dengan Status : <strong>BELUM MENIKAH</strong>
+  </p>
+  ${data.keperluan ? `<p style="text-align: justify; text-indent: 30px;">Surat keterangan ini dibuat untuk keperluan : ${data.keperluan}</p>` : ''}
+  <br>
+  <p style="text-align: justify; text-indent: 0;">Demikianlah surat keterangan ini dibuat untuk dapat dipergunakan sebagaimana mestinya.</p>
+
+  <div style="margin-top: 30px; text-align: right;">
+    <div style="display: inline-block; text-align: center;">
+      <p style="margin: 0;">${data.desa || '...............'}, ${data.tanggal || '..................'}</p>
+      <p style="margin: 5px 0 0 0;">Kepala Desa ${data.desa || '...............'}</p>
+      <div style="height: 40px;"></div>
+      <p style="margin: 0;"><strong>${(data.nama_kepala || '...........................').toUpperCase()}</strong></p>
+    </div>
+  </div>
 
 `
+
 };
 
 // --- HELPER FUNCTIONS ---
@@ -5419,7 +5579,32 @@ case 'ahli_waris':
       data.data_baru = document.getElementById('data_baru')?.value || '';
       data.alasan_perubahan = document.getElementById('alasan_perubahan')?.value || '';
       break;
-
+case 'belum_menikah_lengkap':
+  data.nama = document.getElementById('nama')?.value || '';
+  data.nik = document.getElementById('nik')?.value || '';
+  data.jk = document.getElementById('jk')?.value || '';
+  data.ttl = document.getElementById('ttl')?.value || '';
+  data.pekerjaan = document.getElementById('pekerjaan')?.value || '';
+  data.agama = document.getElementById('agama')?.value || '';
+  data.alamat = document.getElementById('alamat')?.value || '';
+  
+  data.nama_ayah = document.getElementById('nama_ayah')?.value || '';
+  data.nik_ayah = document.getElementById('nik_ayah')?.value || '';
+  data.ttl_ayah = document.getElementById('ttl_ayah')?.value || '';
+  data.agama_ayah = document.getElementById('agama_ayah')?.value || '';
+  data.pekerjaan_ayah = document.getElementById('pekerjaan_ayah')?.value || '';
+  data.alamat_ayah = document.getElementById('alamat_ayah')?.value || '';
+  
+  data.nama_ibu = document.getElementById('nama_ibu')?.value || '';
+  data.nik_ibu = document.getElementById('nik_ibu')?.value || '';
+  data.ttl_ibu = document.getElementById('ttl_ibu')?.value || '';
+  data.agama_ibu = document.getElementById('agama_ibu')?.value || '';
+  data.pekerjaan_ibu = document.getElementById('pekerjaan_ibu')?.value || '';
+  data.alamat_ibu = document.getElementById('alamat_ibu')?.value || '';
+  
+  data.rt_ket = document.getElementById('rt_ket')?.value || '';
+  data.keperluan = document.getElementById('keperluan')?.value || '';
+  break;
     case 'janda_duda':
       data.nama = document.getElementById('nama')?.value || '';
       data.ttl = document.getElementById('ttl')?.value || '';
@@ -5646,20 +5831,21 @@ case 'bersih_diri':
   data.logoDataUrl = logoDataUrl;
 // Izin Orang Tua
   if (currentJenisSurat === 'izin_orang_tua') {
-    data.nama_pemberi = document.getElementById('nama_pemberi')?.value || '';
-    data.nik_pemberi = document.getElementById('nik_pemberi')?.value || '';
-    data.jk_pemberi = document.getElementById('jk_pemberi')?.value || '';
-    data.ttl_pemberi = document.getElementById('ttl_pemberi')?.value || '';
-    data.alamat_pemberi = document.getElementById('alamat_pemberi')?.value || '';
-    data.hubungan_pemberi = document.getElementById('hubungan_pemberi')?.value || '';
-    data.nama_penerima = document.getElementById('nama_penerima')?.value || '';
-    data.nik_penerima = document.getElementById('nik_penerima')?.value || '';
-    data.jk_penerima = document.getElementById('jk_penerima')?.value || '';
-    data.ttl_penerima = document.getElementById('ttl_penerima')?.value || '';
-    data.alamat_penerima = document.getElementById('alamat_penerima')?.value || '';
-    data.hubungan_penerima = document.getElementById('hubungan_penerima')?.value || '';
-    data.pekerjaan_tujuan = document.getElementById('pekerjaan_tujuan')?.value || '';
-    data.negara_tujuan = document.getElementById('negara_tujuan')?.value || '';
+ data.nama_pemberi = document.getElementById('nama_pemberi')?.value || '';
+  data.nik_pemberi = document.getElementById('nik_pemberi')?.value || '';
+  data.jk_pemberi = document.getElementById('jk_pemberi')?.value || '';
+  data.ttl_pemberi = document.getElementById('ttl_pemberi')?.value || '';
+  data.alamat_pemberi = document.getElementById('alamat_pemberi')?.value || '';
+  data.hubungan_pemberi = document.getElementById('hubungan_pemberi')?.value || '';
+  data.nama_penerima = document.getElementById('nama_penerima')?.value || '';
+  data.nik_penerima = document.getElementById('nik_penerima')?.value || '';
+  data.jk_penerima = document.getElementById('jk_penerima')?.value || '';
+  data.ttl_penerima = document.getElementById('ttl_penerima')?.value || '';
+  data.alamat_penerima = document.getElementById('alamat_penerima')?.value || '';
+  data.hubungan_penerima = document.getElementById('hubungan_penerima')?.value || '';
+  data.pekerjaan_tujuan = document.getElementById('pekerjaan_tujuan')?.value || '';
+  data.negara_tujuan = document.getElementById('negara_tujuan')?.value || '';
+  data.nama_perusahaan = document.getElementById('nama_perusahaan')?.value || '';
   }
   return data;
 }
